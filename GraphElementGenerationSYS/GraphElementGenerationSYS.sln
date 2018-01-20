@@ -1,20 +1,25 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphElementGenerationSYS", "GraphElementGenerationSYS\GraphElementGenerationSYS.csproj", "{192EE7CF-0170-4A34-AFF9-4C9DDCF55DD7}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphElementGenerationSYS", "GraphElementGenerationSYS\GraphElementGenerationSYS.csproj", "{A05994E2-A82B-483F-8972-752C16AF0ACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{192EE7CF-0170-4A34-AFF9-4C9DDCF55DD7}.Debug|x86.ActiveCfg = Debug|x86
-		{192EE7CF-0170-4A34-AFF9-4C9DDCF55DD7}.Debug|x86.Build.0 = Debug|x86
-		{192EE7CF-0170-4A34-AFF9-4C9DDCF55DD7}.Release|x86.ActiveCfg = Release|x86
-		{192EE7CF-0170-4A34-AFF9-4C9DDCF55DD7}.Release|x86.Build.0 = Release|x86
+		{A05994E2-A82B-483F-8972-752C16AF0ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05994E2-A82B-483F-8972-752C16AF0ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05994E2-A82B-483F-8972-752C16AF0ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05994E2-A82B-483F-8972-752C16AF0ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA53D6DB-D4D8-4A36-B454-67E84940B377}
 	EndGlobalSection
 EndGlobal

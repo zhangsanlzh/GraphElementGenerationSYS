@@ -6,15 +6,15 @@
 
 像素，为影像显示的基本单位。单色影像的每个像素有自己的灰阶影像。0通常表示黑，而最大值通常表示白色。例如，在一个8位元影像中，最大的无号整数是255，所以这是白色的值。在彩色影像中，像素可以用它的色调，饱和度，和亮度来表示，但是通常用红绿蓝强度来表示。像素可以是长方形的或者方形的。
 
-![sony-dsc-29-625x1000](C:\Users\Administrator\Desktop\GraphElementGenerationSYS\images\sony-dsc-29-625x1000.jpg)
+![sony-dsc-29-625x1000](.\images\sony-dsc-29-625x1000.jpg)
 
-![Nexus_one_screen_microscope](C:\Users\Administrator\Desktop\GraphElementGenerationSYS\images\Nexus_one_screen_microscope.jpg)
+![Nexus_one_screen_microscope](.\images\Nexus_one_screen_microscope.jpg)
 
-![LCDpixelsRGB](C:\Users\Administrator\Desktop\GraphElementGenerationSYS\images\LCDpixelsRGB.jpg)
+![LCDpixelsRGB](.\images\LCDpixelsRGB.jpg)
 
-![200px-Pixel_geometry_01_Pengo](C:\Users\Administrator\Desktop\GraphElementGenerationSYS\images\200px-Pixel_geometry_01_Pengo.jpg)
+![200px-Pixel_geometry_01_Pengo](.\images\200px-Pixel_geometry_01_Pengo.jpg)
 
-![4eaTi](C:\Users\Administrator\Desktop\GraphElementGenerationSYS\images\4eaTi.jpg)
+![4eaTi](.\images\4eaTi.jpg)
 
 一个像素所能表达的不同颜色数取决于比特每像素（BPP,bit per pixel）。这个最大数可以通过取2的色彩深度次幂来得到。例如，常见的取值有：
 
