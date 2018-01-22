@@ -3,7 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:GraphElementGenerationSYS"
              StartupUri="MainWindow.xaml">
+
     <Application.Resources>
-         
+        <FontFamily x:Key="HandWrite">pack://application:,,,/Resources/FontFamily/#apple cider daydreams</FontFamily>
+
+        <ResourceDictionary Source="Resources/Style.xaml" x:Key="MainWindowStyle"/>
     </Application.Resources>
+    
+
 </Application>
