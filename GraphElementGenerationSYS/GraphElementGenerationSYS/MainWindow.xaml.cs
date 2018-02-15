@@ -24,5 +24,15 @@ namespace GraphElementGenerationSYS
         {
             InitializeComponent();
         }
+
+        private void FormClose(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void FormMinimize(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }

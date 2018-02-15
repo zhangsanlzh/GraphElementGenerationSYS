@@ -15,4 +15,3 @@ C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerat
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.pdb
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\App.baml
-C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Resources\Style.baml

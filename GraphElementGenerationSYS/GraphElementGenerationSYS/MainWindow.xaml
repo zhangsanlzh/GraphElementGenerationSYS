@@ -8,6 +8,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="600" Width="900">
 
     <WindowChrome.WindowChrome>
@@ -20,91 +21,62 @@
 
 
     <Window.Resources>
-
-        <!--<Style TargetType="Button" x:Key="MenuButton">
-            <Setter Property="Width" Value="40" />
-            <Setter Property="Height" Value="40" />
-            <Setter Property="Background" Value="#2F3243" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="BorderThickness" Value="0" />
-            
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Red" />
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#007ACC" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>-->
-
         <Style TargetType="local:MainWindow">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!--外边框-->
-                        <Border Padding="10">
+                        <Border Padding="15">
                             <Grid>
-                                <!--内边框-->
-                                <Border CornerRadius="5">
-                                    <Border.Effect>
-                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2"/>
-                                    </Border.Effect>
-                                </Border>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="#2F3243" />
+                                </Grid.Background>
 
-                                <Grid>
-                                    <Grid.Background>
-                                        <SolidColorBrush Color="#2F3243" />
-                                    </Grid.Background>
-
-                                    <!--定义窗体为上下两部分-->
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <!--第一部分-->
-                                    <Grid Grid.Row="0" Panel.ZIndex="1">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="100" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="90" />
-                                        </Grid.ColumnDefinitions>
-                                        <!--logo-->
-                                        <Viewbox Grid.Column="0" Stretch="Uniform">
-                                            <TextBlock Foreground="White" FontFamily="{DynamicResource HandWrite}" Text="GegSYS" />
-                                        </Viewbox>
-                                        <!--程序名-->
-                                        <Viewbox Grid.Column="1">
-                                            <TextBlock Foreground="White" FontFamily="{DynamicResource HandWrite}" Text="Graph Element Generation System" />
-                                        </Viewbox>
-                                        <!--最小/大化/关闭按钮-->
-                                        <Viewbox Grid.Column="2">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Button Style="{DynamicResource MenuButton}">-</Button>
-                                                <Button Style="{DynamicResource MenuButton}">+</Button>
-                                                <Button Style="{DynamicResource MenuButton}">*</Button>
-                                            </StackPanel>
-                                        </Viewbox>
-                                    </Grid>
-                                    <!--第二部分-->
-                                    <Grid Grid.Row="2">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="250" />
-                                        </Grid.ColumnDefinitions>
-
-                                    </Grid>
-                                    
-                                    
+                                <Grid.Effect>
+                                    <!--周围一个淡淡的边框-->
+                                    <DropShadowEffect Color="LightBlue" ShadowDepth="0.1"></DropShadowEffect>
+                                </Grid.Effect>
+                                <!--定义窗体为上下两部分-->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <!--第一部分-->
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="120" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--logo-->
+                                    <Viewbox Grid.Column="0" Stretch="Uniform">
+                                        <TextBlock Foreground="White" FontFamily="{StaticResource HandWrite}" Text="GegSYS" />
+                                    </Viewbox>
+                                    <!--程序名-->
+                                    <Viewbox Grid.Column="1">
+                                        <TextBlock  Foreground="White" FontFamily="{StaticResource HandWrite}" Text="Graph Element Generation System" />
+                                    </Viewbox>
+                                    <!--最小化/关闭按钮-->
+                                    <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
+                                        <Button Style="{StaticResource FormButtonStyle}" Click="FormMinimize">-</Button>
+                                        <Button Style="{StaticResource FormButtonStyle}" Click="FormClose">×</Button>
+                                    </StackPanel>
                                 </Grid>
+                                <!--第二部分-->
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="250" />
+                                    </Grid.ColumnDefinitions>
 
+                                </Grid>
                             </Grid>
+
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Window.Resources>
-
 </Window>
