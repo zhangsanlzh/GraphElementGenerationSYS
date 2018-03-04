@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gegsys.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dark24.png")]
 
 

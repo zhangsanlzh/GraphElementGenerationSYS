@@ -4,14 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GraphElementGenerationSYS
 {
@@ -24,15 +17,35 @@ namespace GraphElementGenerationSYS
         {
             InitializeComponent();
         }
+        protected void Window_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
 
-        private void FormClose(object sender, RoutedEventArgs e)
+        protected void FormClose(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void FormMinimize(object sender, RoutedEventArgs e)
+        protected void FormMinimize(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
+
+        protected void WindowMenu(object sender, RoutedEventArgs e)
+        {
+            SystemCommands.ShowSystemMenu(this, GetMousePosition());
+        }
+
+        protected Point GetMousePosition()
+        {
+            var position = Mouse.GetPosition(this);
+            return new Point(position.X + this.Left, position.Y + this.Top);
+        }
+
+
     }
 }

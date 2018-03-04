@@ -7,76 +7,75 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-        Title="MainWindow" Height="600" Width="900">
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"              
+        Title="MainWindow" Height="600" Width="900"
+        Style="{DynamicResource MainWindowStyle}">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome 
-            CaptionHeight="30"
-            CornerRadius="0"
-            GlassFrameThickness="0"
-            />
+        <WindowChrome CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
 
-
     <Window.Resources>
-        <Style TargetType="local:MainWindow">
+        <Style TargetType="{x:Type local:MainWindow}" x:Key="MainWindowStyle">
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Window}">
-                        <!--外边框-->
-                        <Border Padding="15">
-                            <Grid>
-                                <Grid.Background>
-                                    <SolidColorBrush Color="#2F3243" />
-                                </Grid.Background>
-
-                                <Grid.Effect>
-                                    <!--周围一个淡淡的边框-->
-                                    <DropShadowEffect Color="LightBlue" ShadowDepth="0.1"></DropShadowEffect>
-                                </Grid.Effect>
-                                <!--定义窗体为上下两部分-->
+                    <ControlTemplate TargetType="local:MainWindow">
+                        <Border BorderThickness="1" BorderBrush="{StaticResource DarkBlue}">
+                            <Grid Background="White">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="30" />
-                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <!--第一部分-->
-                                <Grid Grid.Row="0">
+
+                                <!--Title Bar-->
+                                <Grid x:Name="ddd" Grid.Row="0" MouseDown="Window_MouseDown" Background="{StaticResource DarkBlack}">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <!--logo-->
-                                    <Viewbox Grid.Column="0" Stretch="Uniform">
-                                        <TextBlock Foreground="White" FontFamily="{StaticResource HandWrite}" Text="GegSYS" />
-                                    </Viewbox>
-                                    <!--程序名-->
+
+                                    <!--Menu Button-Icon-->
+                                    <Border Grid.Column="0" Margin="5 0 0 0 ">
+                                        <Button Style="{StaticResource MenuButtonStyle}" Click="WindowMenu">
+                                            <TextBlock Foreground="White" FontFamily="{StaticResource HandWrite}" Text="GegSYS" />
+                                        </Button>
+                                    </Border>
+
+                                    <!--App Name-->
                                     <Viewbox Grid.Column="1">
                                         <TextBlock  Foreground="White" FontFamily="{StaticResource HandWrite}" Text="Graph Element Generation System" />
                                     </Viewbox>
-                                    <!--最小化/关闭按钮-->
+
+                                    <!--Window Button-->
                                     <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
-                                        <Button Style="{StaticResource FormButtonStyle}" Click="FormMinimize">-</Button>
-                                        <Button Style="{StaticResource FormButtonStyle}" Click="FormClose">×</Button>
+                                        <Button Style="{StaticResource WindowButtonStyle}" Click="FormMinimize">-</Button>
+                                        <Button Style="{StaticResource WindowButtonStyle}" Click="FormClose">×</Button>
                                     </StackPanel>
                                 </Grid>
-                                <!--第二部分-->
-                                <Grid Grid.Row="2">
+
+                                <!--Menu List-->
+                                <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="250" />
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
+                                    <ListBox Style="{StaticResource MenuListStyle}">
+                                        <ListBoxItem>ggg</ListBoxItem>
+                                        <ListBoxItem>dddd</ListBoxItem>
+                                        <ListBoxItem>dddd</ListBoxItem>
+                                        <ListBoxItem>dddd</ListBoxItem>
+                                    </ListBox>
                                 </Grid>
-                            </Grid>
 
+                            </Grid>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
 </Window>
