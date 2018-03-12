@@ -2,14 +2,31 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GraphElementGenerationSYS.Resources">
 
-    <!--主题黑-->
+    <!--标题栏黑-->
     <SolidColorBrush x:Key="DarkBlack">#2D2D30</SolidColorBrush>
+
+    <!--深黑-->
+    <SolidColorBrush x:Key="DarkBlackPlus">#1E1E1E</SolidColorBrush>
 
     <!--浅色黑-->
     <SolidColorBrush x:Key="LightBlack">#3F3F46</SolidColorBrush>
 
     <!--深蓝色-->
     <SolidColorBrush x:Key="DarkBlue">#007ACC</SolidColorBrush>
-    
+
+    <!--字体背景灰-浅-->
+    <SolidColorBrush x:Key="FontLightGray">#434346</SolidColorBrush>
+
+    <!--字体背景灰-深-->
+    <SolidColorBrush x:Key="FontDarkGray">#333337</SolidColorBrush>
+
+    <!--渐变灰-->
+    <SolidColorBrush x:Key="GradientGray">#313131</SolidColorBrush>
+
+    <!--字体白-深-->
+    <SolidColorBrush x:Key="FontDarkWhite">#C5C5C5</SolidColorBrush>
+
+    <!--亮白色-->
+    <SolidColorBrush x:Key="LightWhite">#F1F1F1</SolidColorBrush>
 
 </ResourceDictionary>

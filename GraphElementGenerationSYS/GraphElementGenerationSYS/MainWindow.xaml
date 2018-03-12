@@ -61,13 +61,55 @@
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
+                                    
+                                    <!--Fuction Bar-->
+                                    <Grid Grid.Column="0">
+                                        <StackPanel Width="50" Background="{StaticResource FontDarkGray}">
+                                            <RadioButton GroupName="one" Style="{StaticResource CircleRadioButtonStyle}" 
+                                                         Content="⚪" Click="RadioButton_Click" x:Name="Circle"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource SquareRadioButtonStyle}" Content="⬜" />
+                                            <RadioButton GroupName="one" Style="{StaticResource StraitLineRadioButtonStyle}" Content="\" />
+                                            <RadioButton GroupName="one" Style="{StaticResource CurveRadioButtonStyle}" Content="~" />
+                                            <RadioButton GroupName="one" Style="{StaticResource CharacterRadioButtonStyle}" Content="A" />
+                                            <RadioButton GroupName="one" Style="{StaticResource TransformRadioButtonStyle}" Content="→" />
+                                            <RadioButton GroupName="one" Style="{StaticResource SettingRadioButtonStyle}" Content="⚙" />
+                                        </StackPanel>
+                                    </Grid>
 
-                                    <ListBox Style="{StaticResource MenuListStyle}">
-                                        <ListBoxItem>ggg</ListBoxItem>
-                                        <ListBoxItem>dddd</ListBoxItem>
-                                        <ListBoxItem>dddd</ListBoxItem>
-                                        <ListBoxItem>dddd</ListBoxItem>
-                                    </ListBox>
+                                    <!--Content Presenter Area-->
+                                    <Grid Grid.Column="1" Background="{StaticResource DarkBlackPlus}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!--Search Grid-->
+                                        <Grid Width="250" Background="{StaticResource GradientGray}">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <!--Search Result Box-->
+                                            <Grid Grid.Row="0">
+                                                <ListBox Style="{StaticResource SearchResultBoxStyle}" x:Name="FunctionList">
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
+                                                </ListBox>
+                                            </Grid>
+
+                                        </Grid>
+                                    </Grid>
+
+
+
+
                                 </Grid>
 
                             </Grid>

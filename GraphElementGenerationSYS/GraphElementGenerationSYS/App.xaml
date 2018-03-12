@@ -11,6 +11,8 @@
                 <ResourceDictionary  Source="Resources/Button.xaml"/>
                 <ResourceDictionary  Source="Resources/MenuList.xaml"/>
                 <ResourceDictionary  Source="Resources/Color.xaml"/>
+                <ResourceDictionary  Source="Resources/ListBox.xaml"/>
+                <ResourceDictionary  Source="Resources/RadioButton.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
