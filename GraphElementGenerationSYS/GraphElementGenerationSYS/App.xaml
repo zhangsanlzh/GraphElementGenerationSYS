@@ -13,6 +13,7 @@
                 <ResourceDictionary  Source="Resources/Color.xaml"/>
                 <ResourceDictionary  Source="Resources/ListBox.xaml"/>
                 <ResourceDictionary  Source="Resources/RadioButton.xaml"/>
+                <ResourceDictionary  Source="Resources/Canvas.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

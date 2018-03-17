@@ -6,6 +6,8 @@
     <Style TargetType="{x:Type ListBox}" x:Key="SearchResultBoxStyle">
         <Setter Property="Background" Value="{StaticResource LightBlack}"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
     </Style>
 
     <!--List Box Item Style-->
@@ -17,7 +19,7 @@
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
                     <Grid x:Name="Item">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="225" />
+                            <ColumnDefinition Width="150" />
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
@@ -34,12 +36,10 @@
                         </Trigger>
                     </ControlTemplate.Triggers>
 
-
                 </ControlTemplate>
-
-
             </Setter.Value>
         </Setter>
-
+        
+        
     </Style>
 </ResourceDictionary>

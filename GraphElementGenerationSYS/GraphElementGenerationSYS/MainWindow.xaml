@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"              
-        Title="MainWindow" Height="600" Width="900"
+        Title="MainWindow" Height="620" Width="900"
         Style="{DynamicResource MainWindowStyle}">
 
     <WindowChrome.WindowChrome>
@@ -28,7 +28,7 @@
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
 
-                                <!--Title Bar-->
+                                <!--Form功能条-->
                                 <Grid x:Name="ddd" Grid.Row="0" MouseDown="Window_MouseDown" Background="{StaticResource DarkBlack}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -36,43 +36,51 @@
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
-                                    <!--Menu Button-Icon-->
+                                    <!--Form Icon-->
                                     <Border Grid.Column="0" Margin="5 0 0 0 ">
                                         <Button Style="{StaticResource MenuButtonStyle}" Click="WindowMenu">
                                             <TextBlock Foreground="White" FontFamily="{StaticResource HandWrite}" Text="GegSYS" />
                                         </Button>
                                     </Border>
 
-                                    <!--App Name-->
+                                    <!--中间程序名-->
                                     <Viewbox Grid.Column="1">
                                         <TextBlock  Foreground="White" FontFamily="{StaticResource HandWrite}" Text="Graph Element Generation System" />
                                     </Viewbox>
 
-                                    <!--Window Button-->
+                                    <!--最小化和关闭按钮-->
                                     <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
-                                        <Button Style="{StaticResource WindowButtonStyle}" Click="FormMinimize">-</Button>
-                                        <Button Style="{StaticResource WindowButtonStyle}" Click="FormClose">×</Button>
+                                        <Button Style="{StaticResource MinimizeButtonStyle}" Click="FormMinimize"/>
+                                        <Button Style="{StaticResource CloseButtonStyle}" Click="FormClose"/>
                                     </StackPanel>
                                 </Grid>
 
-                                <!--Menu List-->
+                                <!--下方界面-->
                                 <Grid Grid.Row="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    
-                                    <!--Fuction Bar-->
-                                    <Grid Grid.Column="0">
-                                        <StackPanel Width="50" Background="{StaticResource FontDarkGray}">
+
+                                    <!--左侧功能条-->
+                                    <Grid Grid.Column="0" Background="{StaticResource FontDarkGray}">
+                                        <StackPanel Width="50" Margin="0 10 0 0">
+                                            <RadioButton IsChecked="True" GroupName="one" Style="{StaticResource HomeRadioButtonStyle}" 
+                                                         Click="RadioButton_Click" x:Name="Home"/>
                                             <RadioButton GroupName="one" Style="{StaticResource CircleRadioButtonStyle}" 
                                                          Content="⚪" Click="RadioButton_Click" x:Name="Circle"/>
-                                            <RadioButton GroupName="one" Style="{StaticResource SquareRadioButtonStyle}" Content="⬜" />
-                                            <RadioButton GroupName="one" Style="{StaticResource StraitLineRadioButtonStyle}" Content="\" />
-                                            <RadioButton GroupName="one" Style="{StaticResource CurveRadioButtonStyle}" Content="~" />
-                                            <RadioButton GroupName="one" Style="{StaticResource CharacterRadioButtonStyle}" Content="A" />
-                                            <RadioButton GroupName="one" Style="{StaticResource TransformRadioButtonStyle}" Content="→" />
-                                            <RadioButton GroupName="one" Style="{StaticResource SettingRadioButtonStyle}" Content="⚙" />
+                                            <RadioButton GroupName="one" Style="{StaticResource SquareRadioButtonStyle}"
+                                                         Content="⬜" Click="RadioButton_Click" x:Name="Square"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource StraitLineRadioButtonStyle}"
+                                                         Content="\" Click="RadioButton_Click"  x:Name="StraitLine"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource CurveRadioButtonStyle}"
+                                                         Content="~" Click="RadioButton_Click"  x:Name="Curve"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource CharacterRadioButtonStyle}"
+                                                         Content="A" Click="RadioButton_Click" x:Name="Character"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource TransformRadioButtonStyle}"
+                                                         Content="→" Click="RadioButton_Click" x:Name="Transform"/>
+                                            <RadioButton GroupName="one" Style="{StaticResource SettingRadioButtonStyle}"
+                                                         Click="RadioButton_Click" x:Name="Setting"/>
                                         </StackPanel>
                                     </Grid>
 
@@ -81,35 +89,36 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <!--Search Grid-->
-                                        <Grid Width="250" Background="{StaticResource GradientGray}">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-
-                                            <!--Search Result Box-->
+                                        <!--FuncList Grid-->
+                                        <Grid Background="{StaticResource GradientGray}">
+                                            <!--ListBox-->
                                             <Grid Grid.Row="0">
-                                                <ListBox Style="{StaticResource SearchResultBoxStyle}" x:Name="FunctionList">
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                    <ListBoxItem Style="{StaticResource ListItemStyle}">dfdfj</ListBoxItem>
-                                                </ListBox>
+                                                <ListBox Style="{StaticResource SearchResultBoxStyle}" x:Name="FunctionList"/>
                                             </Grid>
-
                                         </Grid>
+
+                                        <!--演示面板-->
+                                        <Grid Grid.Column="1">
+                                            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                                                <Border BorderBrush="{StaticResource DarkBlack}" BorderThickness="1">
+                                                    <Canvas Style="{StaticResource FuncShowCanvasStyle}" x:Name="FuncShowCanvas" MouseWheel="ShowFuncGrid_MouseWheel"/>
+                                                </Border>
+                                            </ScrollViewer>
+                                        </Grid>
+
+                                        <!--右侧功能条-->
+                                        <Grid Grid.Column="2" Width="40" Background="{StaticResource FontDarkGray}">
+                                            <StackPanel Margin="0 50 0 0" Width="50" Background="{StaticResource FontDarkGray}">
+                                                <RadioButton GroupName="one" Style="{StaticResource CircleRadioButtonStyle}" 
+                                                         Content="⚪" Click="RadioButton_Click" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                            </StackPanel>
+                                        </Grid>
+
+
                                     </Grid>
-
-
-
-
                                 </Grid>
 
                             </Grid>

@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:GraphElementGenerationSYS.Resources">
 
-    <!--Window Close/Minimize Button-->
-    <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+    <!--程序最小化/关闭按钮公共样式-->
+    <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="30" />
         <Setter Property="Background" Value="#2D2D30" />
@@ -29,7 +29,40 @@
         </Setter>
     </Style>
 
-    <!--Window Menu Button-->
+    <!--最小化按钮样式-->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}" x:Key="MinimizeButtonStyle">
+        <Setter Property="ToolTip" Value="最小化"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Viewbox>
+                    <Border Margin="25 0 25 0">
+                        <Path Width="12" Height="3" Canvas.Left="0" Canvas.Top="-1.52588e-005" Stretch="Fill" StrokeLineJoin="Round" Fill="#F1F1F1" Data="F1 M 0.500008,0.499985L 64.5,0.499985L 64.5,18.1386L 0.5,18.1386L 0.500008,0.499985 Z "/>
+                    </Border>
+                </Viewbox>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--关闭按钮样式-->
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowButtonStyle}" x:Key="CloseButtonStyle">
+        <Setter Property="ToolTip" Value="关闭"/>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Border Margin="10 10 0 0" HorizontalAlignment="Center">
+                    <Viewbox Stretch="Uniform" Width="20" Height="20" x:Name="Group" Canvas.Left="0" Canvas.Top="3.05176e-005">
+                        <Canvas Width="45" Height="45">
+                            <Path x:Name="Path" Width="20" Height="20" Stretch="Fill" StrokeLineJoin="Round" Fill="#F1F1F1" Data="F1 M 148.832,12.451L 18.7426,153.663L 5.7698,141.712L 135.859,0.5L 148.832,12.451 Z "/>
+                            <Path x:Name="Path_0" Width="20" Height="20" Stretch="Fill" StrokeLineJoin="Round" Fill="#F1F1F1" Data="F1 M 12.451,5.61078L 153.663,135.7L 141.712,148.673L 0.5,18.5835L 12.451,5.61078 Z "/>
+                        </Canvas>
+                    </Viewbox>
+                </Border>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+
+    <!--程序Icon按钮样式-->
     <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
