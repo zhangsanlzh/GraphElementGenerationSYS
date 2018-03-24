@@ -112,7 +112,7 @@
                                         <!--右侧功能条-->
                                         <Grid Grid.Column="2" Width="40" Background="{StaticResource FontDarkGray}">
                                             <StackPanel Margin="0 50 0 0" Width="50" Background="{StaticResource FontDarkGray}">
-                                                <RadioButton GroupName="one" Style="{StaticResource CircleRadioButtonStyle}" 
+                                                <RadioButton GroupName="two" Style="{StaticResource CircleRadioButtonStyle}" 
                                                          Content="⚪" Click="RadioButton_Click" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                                             </StackPanel>
                                         </Grid>

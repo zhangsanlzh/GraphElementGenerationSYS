@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GraphElementGenerationSYS.Algorithm;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Xml;
 
 namespace GraphElementGenerationSYS
@@ -71,10 +68,8 @@ namespace GraphElementGenerationSYS
         /// </summary>
         private void RadioButton_Click(object sender, RoutedEventArgs e)
         {
-
             var listBox =(ListBox)this.GetTemplateChild("FunctionList");//找到列表框    
             listBox.Items.Clear();//清空所有项
-
             if((sender as RadioButton).Name=="Home")
             {
                 listBox.Visibility = Visibility.Hidden;
@@ -205,17 +200,65 @@ namespace GraphElementGenerationSYS
                 default:
                     break;
             }
-
-
-
         }
 
+        private CSys cc = new CSys();//被迫暴漏出子Canvas对象-Child Canvas
+        private string lastCheckedItem="";
         /// <summary>
         /// 功能列表项的点击回应事件
         /// </summary>
         private void ListBoxItemPreviewMouseLeftButtonDown(object sender,MouseButtonEventArgs e)
-        {            
-            MessageBox.Show((sender as ListBoxItem).Name);
+        {
+            #region 项点击检测
+            var canvas = (Canvas)this.GetTemplateChild("FuncShowCanvas");//找到功能演示面板           
+
+            var itemName = (sender as ListBoxItem).Name;//判断此次点击的项是否是上次点击的，或是初次点击的项，如果不是则清空容器Canvas
+            if (itemName != lastCheckedItem && itemName!="")
+            {
+                canvas.Children.Clear();
+            }
+            lastCheckedItem=itemName;//记录上次点击的项的名字
+
+            if (canvas.Children.Count == 0)//判断，如果容器Canvas上没有子Canvas，则重绘子Canvas
+            {
+                canvas.Children.Add(cc.canvas);
+                cc.CreateCoordinateSys();
+                cc.ClearCSys();
+                cc.ShowGrid(10);
+            }
+
+            #endregion
+
+            switch (itemName)
+            {
+                case "Circle0":
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.Width = 100;
+                    rectangle.Height = 100;
+                    rectangle.Fill = new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                    canvas.Children.Add(rectangle);
+
+                    cc.DrawDot(new Point(5, 5));
+
+                    break;
+
+                case "Circle1":
+                    Ellipse ellipse = new Ellipse();
+                    ellipse.Width = 50;
+                    ellipse.Height = 50;
+                    ellipse.Fill= new SolidColorBrush(Color.FromRgb(0, 255, 0));
+                    canvas.Children.Add(ellipse);
+                    break;
+                    
+                default:
+                    break;
+            }
+
+
+
+
+
+
         }
 
 
@@ -234,8 +277,17 @@ namespace GraphElementGenerationSYS
                     return;
                 }
 
-                canvas.Width = canvas.Width * (1+ScaleSpeed);
+                canvas.Width = canvas.Width * (1+ScaleSpeed);//改变容器Canvas的宽高
                 canvas.Height = canvas.Height *(1 + ScaleSpeed);
+
+                if (canvas.Children.Count != 0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
+                {
+                    cc.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
+                    cc.Height = canvas.Height;
+                    cc.ClearCSys();//清除子Canvas的子元素并重绘网格
+                    cc.ShowGrid(10);
+                    cc.DrawDot(new Point(5, 5));
+                }
             }
             else//下滑缩小
             {
@@ -244,8 +296,18 @@ namespace GraphElementGenerationSYS
                     return;
                 }
 
-                canvas.Width = canvas.Width * (1 - ScaleSpeed);
+                canvas.Width = canvas.Width * (1 - ScaleSpeed);//改变容器Canvas的宽高
                 canvas.Height = canvas.Height * (1 - ScaleSpeed);
+
+                if (canvas.Children.Count!=0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
+                {
+                    cc.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
+                    cc.Height = canvas.Height;
+                    cc.ClearCSys();//清除子Canvas的子元素并重绘网格
+                    cc.ShowGrid(10);
+                    cc.DrawDot(new Point(5, 5));
+
+                }
             }
         }
     }

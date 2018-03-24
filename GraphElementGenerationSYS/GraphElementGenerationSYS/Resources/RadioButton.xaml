@@ -33,6 +33,7 @@
 
     <!--Home RadioButton Style-->
     <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource FuctionBarRadioButtonStyle}" x:Key="HomeRadioButtonStyle">
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="Content">
             <Setter.Value>
                 <Path x:Name="Path" Width="25" Height="25" Stretch="Fill" StrokeThickness="2" StrokeLineJoin="Round" Stroke="{StaticResource FontDarkWhite}" Data="F1 M 129.28,1.27997L 1.28027,129.28L 33.2803,129.28L 33.2803,225.28L 97.2803,225.28L 97.2803,161.28L 161.281,161.28L 161.28,225.28L 225.281,225.28L 225.28,129.28L 257.684,128.777L 129.28,1.27997 Z "/>
