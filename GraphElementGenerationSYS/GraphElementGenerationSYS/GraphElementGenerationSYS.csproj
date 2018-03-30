@@ -86,6 +86,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Algorithm\CircleAlgo.cs" />
+    <Compile Include="Algorithm\RectangleAlgo.cs" />
+    <Compile Include="Algorithm\StraitLineAlgo.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

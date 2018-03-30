@@ -202,7 +202,6 @@ namespace GraphElementGenerationSYS
             }
         }
 
-        private CSys cc = new CSys();//被迫暴漏出子Canvas对象-Child Canvas
         private string lastCheckedItem="";
         /// <summary>
         /// 功能列表项的点击回应事件
@@ -221,41 +220,91 @@ namespace GraphElementGenerationSYS
 
             if (canvas.Children.Count == 0)//判断，如果容器Canvas上没有子Canvas，则重绘子Canvas
             {
-                canvas.Children.Add(cc.canvas);
-                cc.CreateCoordinateSys();
-                cc.ClearCSys();
-                cc.ShowGrid(10);
+                canvas.Children.Add(CSys.canvas);
+                CSys.CreateCoordinateSys();
+                CSys.ClearCSys();
+                CSys.ShowGrid(10);
             }
 
             #endregion
 
             switch (itemName)
             {
+                #region 圆与椭圆
+                #region 中点画圆算法
                 case "Circle0":
-                    Rectangle rectangle = new Rectangle();
-                    rectangle.Width = 100;
-                    rectangle.Height = 100;
-                    rectangle.Fill = new SolidColorBrush(Color.FromRgb(0, 255, 0));
-                    canvas.Children.Add(rectangle);
-
-                    cc.DrawDot(new Point(5, 5));
-
+                    CSys.ClearDotLocInfor();//清空点信息
+                    CircleAlgo.MidpointCircleAlgo();
+                    CSys.DrawDots();//画点
                     break;
+                #endregion
 
+                #region Bresenham画圆算法
                 case "Circle1":
-                    Ellipse ellipse = new Ellipse();
-                    ellipse.Width = 50;
-                    ellipse.Height = 50;
-                    ellipse.Fill= new SolidColorBrush(Color.FromRgb(0, 255, 0));
-                    canvas.Children.Add(ellipse);
+                    CSys.ClearDotLocInfor();
+                    CircleAlgo.BresenhamCircleAlgo();
+                    CSys.DrawDots();
                     break;
-                    
+                #endregion
+
+                #region 正负判定画圆算法
+                case "Circle2":
+                    CSys.ClearDotLocInfor();
+                    CircleAlgo.PosiAndNegaCircleAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 快速画圆算法
+                case "Circle3":
+                    CSys.ClearDotLocInfor();
+                    CircleAlgo.QuickCircleAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 中点椭圆算法
+                case "Circle4":
+                    CSys.ClearDotLocInfor();
+                    CircleAlgo.MidpointEllipseAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region Bresenham椭圆算法
+                case "Circle5":
+                    CSys.ClearDotLocInfor();
+                    CircleAlgo.BresenhamEllipseAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+                #region 矩形
+                #region 矩形生成算法-不填充
+                case "Square0":
+                    CSys.ClearDotLocInfor();
+                    RectangleAlgo.RectangleNoFillAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 矩形生成算法-填充
+                case "Square1":
+                    CSys.ClearDotLocInfor();
+                    RectangleAlgo.RectangleFillAlgo();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+
+
                 default:
                     break;
             }
-
-
-
 
 
 
@@ -282,11 +331,11 @@ namespace GraphElementGenerationSYS
 
                 if (canvas.Children.Count != 0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
                 {
-                    cc.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
-                    cc.Height = canvas.Height;
-                    cc.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    cc.ShowGrid(10);
-                    cc.DrawDot(new Point(5, 5));
+                    CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
+                    CSys.Height = canvas.Height;
+                    CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
+                    CSys.ShowGrid(10);
+                    CSys.DrawDots();
                 }
             }
             else//下滑缩小
@@ -301,12 +350,11 @@ namespace GraphElementGenerationSYS
 
                 if (canvas.Children.Count!=0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
                 {
-                    cc.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
-                    cc.Height = canvas.Height;
-                    cc.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    cc.ShowGrid(10);
-                    cc.DrawDot(new Point(5, 5));
-
+                    CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
+                    CSys.Height = canvas.Height;
+                    CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
+                    CSys.ShowGrid(10);
+                    CSys.DrawDots();
                 }
             }
         }

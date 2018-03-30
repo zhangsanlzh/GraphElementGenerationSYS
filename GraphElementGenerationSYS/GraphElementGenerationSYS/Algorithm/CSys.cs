@@ -7,9 +7,9 @@ namespace GraphElementGenerationSYS.Algorithm
 {
     class CSys
     {
-        public Canvas canvas = new Canvas();//待返回的Canvas对象
+        public static Canvas canvas = new Canvas();//待返回的Canvas对象
 
-        public double Width//Canvas的宽
+        public static double Width//Canvas的宽
         {
             set
             {
@@ -23,7 +23,7 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
-        public double Height//Canvas的高
+        public static double Height//Canvas的高
         {
             set
             {
@@ -37,13 +37,15 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
-        public int CellNum { get; set; }//单元格个数
+        public static int CellNum { get; set; }//单元格个数
+
+        public static int[,] CanvasDotsArray=new int[10,10];//用于保存单元格点的数组，1代表某格有点
 
         /// <summary>
         /// 创建坐标系
         /// </summary>
         /// <returns>Canvas对象</returns>
-        public Canvas CreateCoordinateSys()
+        public static Canvas CreateCoordinateSys()
         {
             canvas.Background = new SolidColorBrush(Color.FromRgb(255,255,0));
             canvas.Width = (canvas.Parent as Canvas).Width;
@@ -55,9 +57,10 @@ namespace GraphElementGenerationSYS.Algorithm
         /// <summary>
         /// 显示坐标网格
         /// </summary>
-        public void ShowGrid(int CellNum)
+        public static void ShowGrid(int CellNum)
         {
-            this.CellNum = CellNum;
+            CSys.CellNum= CellNum;
+            //CanvasDotsArray = new int[CellNum,CellNum];//初始化用于保存储存在Canvas上的点的位置信息
 
             Point StartPoint = new Point();//起点
             Point EndPoint = new Point();//终点
@@ -92,38 +95,90 @@ namespace GraphElementGenerationSYS.Algorithm
         /// <summary>
         /// 清空Canvas
         /// </summary>
-        /// 
-        public void ClearCSys()
+        public static void ClearCSys()
         {
-            canvas.Children.Clear();
+            canvas.Children.Clear();//情况画布上所有对象
         }
 
-        public void DrawDot(Point location)
+        /// <summary>
+        /// 画一个点
+        /// </summary>
+        public static void DrawDot(Point location)
         {
             int x = (int)location.X;
             int y = (int)location.Y;
 
-            if (x >= this.CellNum || y >= this.CellNum || x < 0 || y < 0)//如果图像越界，则不描点
+            if (x >= CellNum || y >= CellNum || x < 0 || y < 0)//如果图像越界，则不描点
             {
                 return;
             }
             Point CenterXY = new Point();
-            CenterXY.X = (x + 0.5) * this.Width / this.CellNum;
-            CenterXY.Y = (y + 0.5) * this.Height / this.CellNum;
+            CenterXY.X = (x + 0.5) * Width / CellNum;
+            CenterXY.Y = (y + 0.5) * Height / CellNum;
 
-            //if (MainWindow.SYSMODE == 0)//完全填充模式
-            //{
-                DrawRectangle(location);
-            //}
-            //else//内切圆填充模式
-            //{
-            //    DrawCircle(CenterXY, RADIUS);//描点
-            //}
+            DrawRectangle(location);
+            CanvasDotsArray[(int)location.X, (int)location.Y] = 1;//表明此处有点
         }
 
+        /// <summary>
+        /// 一次在画多个点
+        /// </summary>
+        public static void DrawDots()
+        {
+            for (int i = 0; i < CellNum; i++)
+            {
+                for (int j = 0; j < CellNum; j++)
+                {
+                    if (j > CellNum-1 || i > CellNum-1)//检测到[Length-1,Length-1],包含这个点
+                    {
+                        continue;
+                    }
+                    if (CanvasDotsArray[i, j] != 0)
+                    {
+                        DrawDot(new Point(i, j));
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 在Canvas上保存点
+        /// </summary>
+        public static void SetDotLocInfor(Point location)
+        {
+            if (location.Y<0||location.X<0||location.Y>CellNum-1||location.X>CellNum-1)
+            {
+                return;
+            }
+            CanvasDotsArray[(int)location.X, (int)location.Y] = 1;//表明此处有点
+        }
+
+        /// <summary>
+        /// //清空点信息
+        /// </summary>
+        public static void ClearDotLocInfor()
+        {
+            if (!(CanvasDotsArray is null))
+            {
+                for (int i = 0; i < CellNum; i++)//清空当前画布上储存的点的位置信息
+                {
+                    for (int j = 0; j < CellNum; j++)
+                    {
+                        if (j > CellNum-1 || i > CellNum-1)//检测到[Length-1,Length-1],包含这个点
+                        {
+                            continue;
+                        }
+                        if (CanvasDotsArray[i, j] != 0)
+                        {
+                            CanvasDotsArray[i, j] = 0;
+                        }
+                    }
+                }
+            }
+        }
 
         #region CSys内部引用
-        private void DrawLine(Point startPt, Point endPt)//画一条线
+        private static void DrawLine(Point startPt, Point endPt)//画一条线
         {
             //设置线型为虚线
             DoubleCollection dCollection = new DoubleCollection();
@@ -143,7 +198,7 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
-        private void DrawRectangle(Point rectLoc)//画矩形
+        private static void DrawRectangle(Point rectLoc)//画矩形
         {
             DoubleCollection dCollection = new DoubleCollection();//设置线型为虚线
             dCollection.Add(2);
@@ -151,10 +206,10 @@ namespace GraphElementGenerationSYS.Algorithm
 
             RectangleGeometry myRectangleGeometry = new RectangleGeometry();//设置矩形属性
             Rect myRect = new Rect();
-            myRect.X = rectLoc.X * this.Width / this.CellNum;
-            myRect.Y = rectLoc.Y * this.Height / this.CellNum;
-            myRect.Width = this.Width / this.CellNum;
-            myRect.Height = this.Height / this.CellNum;
+            myRect.X = rectLoc.X * Width / CellNum;
+            myRect.Y = rectLoc.Y * Height / CellNum;
+            myRect.Width = Width / CellNum;
+            myRect.Height = Height / CellNum;
             myRectangleGeometry.Rect = myRect;
 
             Path myPath = new Path();
@@ -164,7 +219,7 @@ namespace GraphElementGenerationSYS.Algorithm
             myPath.StrokeDashArray = dCollection;
             //if (isFill)
             //{
-                myPath.Fill = Brushes.Black;//填充为黑色
+                myPath.Fill = Brushes.Orange;//填充为黑色
             //}
 
             canvas.Children.Add(myPath);//把图像添加到待返回的临时canvas对象上
