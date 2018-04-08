@@ -1,10 +1,13 @@
 ﻿using GraphElementGenerationSYS.Algorithm;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Xml;
+using GraphElementGenerationSYS.Forms;
 
 namespace GraphElementGenerationSYS
 {
@@ -73,11 +76,12 @@ namespace GraphElementGenerationSYS
             if((sender as RadioButton).Name=="Home")
             {
                 listBox.Visibility = Visibility.Hidden;
+
                 return;
             }
 
             XmlDocument doc = new XmlDocument();
-            doc.Load("../../Data/FuncListItem.xml");
+            doc.Load("Data/FuncListItem.xml");
 
             var root = doc.SelectSingleNode("Root");
             var childs = root.ChildNodes;
@@ -133,15 +137,15 @@ namespace GraphElementGenerationSYS
                     break;
                 #endregion
 
-                #region Case:Curve
-                case "Curve":
+                #region Case:Polygon
+                case "Polygon":
                     listBox.Visibility = Visibility.Visible;
                     for (int i = 0; i < childs[3].ChildNodes.Count; i++)
                     {
                         ListBoxItem item = new ListBoxItem();
                         item.Style = FindResource("ListItemStyle") as Style;
                         item.Content = childs[3].ChildNodes.Item(i).InnerText;
-                        item.Name = "Curve" + i.ToString();
+                        item.Name = "Polygon" + i.ToString();
                         item.PreviewMouseLeftButtonDown += new MouseButtonEventHandler(ListBoxItemPreviewMouseLeftButtonDown);
 
                         listBox.Items.Add(item);
@@ -202,7 +206,7 @@ namespace GraphElementGenerationSYS
             }
         }
 
-        private string lastCheckedItem="";
+        public static string CheckedItemName="";//指示点击过的项的名称
         /// <summary>
         /// 功能列表项的点击回应事件
         /// </summary>
@@ -212,18 +216,18 @@ namespace GraphElementGenerationSYS
             var canvas = (Canvas)this.GetTemplateChild("FuncShowCanvas");//找到功能演示面板           
 
             var itemName = (sender as ListBoxItem).Name;//判断此次点击的项是否是上次点击的，或是初次点击的项，如果不是则清空容器Canvas
-            if (itemName != lastCheckedItem && itemName!="")
+            if (itemName != CheckedItemName && itemName!="")
             {
                 canvas.Children.Clear();
             }
-            lastCheckedItem=itemName;//记录上次点击的项的名字
+            CheckedItemName=itemName;//记录上次点击的项的名字
 
             if (canvas.Children.Count == 0)//判断，如果容器Canvas上没有子Canvas，则重绘子Canvas
             {
                 canvas.Children.Add(CSys.canvas);
                 CSys.CreateCoordinateSys();
                 CSys.ClearCSys();
-                CSys.ShowGrid(10);
+                CSys.ShowGrid(50);
             }
 
             #endregion
@@ -300,14 +304,375 @@ namespace GraphElementGenerationSYS
 
                 #endregion
 
+                #region 直线
+                #region DDA画线法
+                case "StraitLine0"://DDA画线法
+                    CSys.ClearDotLocInfor();
+                    StraitLineAlgo.DrawStraitLineDDA();
+                    CSys.DrawDots();
+                    break;
+                #endregion
 
+                #region 中点画线法
+                case "StraitLine1"://中点画线法
+                    CSys.ClearDotLocInfor();
+                    StraitLineAlgo.CenterStraitLine();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region Bresenham画线
+                case "StraitLine2"://Bresenham画线
+                    CSys.ClearDotLocInfor();
+                    StraitLineAlgo.BresenhamStraitLine();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+                #region 多边形
+                #region 正三角形
+                case "Polygon0":
+                    CSys.ClearDotLocInfor();
+                    PolygonAlgo.RegularTriangle();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 正方形
+                case "Polygon1":
+                    CSys.ClearDotLocInfor();
+                    PolygonAlgo.CreateSquare();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 任意个顶点的多边形
+                case "Polygon2":
+                    CSys.ClearDotLocInfor();
+                    PolygonAlgo.CreateGenericPolygon();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+                #region 字符
+                #region 英文字符 A/a-Z/z
+                #region A/G-Consolas字体
+                case "Character0":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.A();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character1":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.B();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character2":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.C();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character3":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.D();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character4":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.E();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character5":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.F();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character6":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.G();
+                    CSys.DrawDots();
+                    break;
+
+                #endregion
+
+                #region H/n-Gabriola字体
+                case "Character7":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.H();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character8":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.I();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character9":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.J();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character10":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.K();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character11":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.L();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character12":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.M();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character13":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.N();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region O/Q-Segoe Print字体
+                case "Character14":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.O();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character15":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.P();
+                    CSys.DrawDots();
+                    break;
+                case "Character16":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.Q();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region R/T-Hobo Std字体
+                case "Character17":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.R();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character18":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.S();
+                    CSys.DrawDots();
+                    break;
+                case "Character19":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.T();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region U/W-Segoe Print字体
+                case "Character20":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.U();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character21":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.V();
+                    CSys.DrawDots();
+                    break;
+                case "Character22":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.W();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region X/Z-Letter Gothic Std字体
+                case "Character23":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.X();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character24":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.Y();
+                    CSys.DrawDots();
+                    break;
+
+                case "Character25":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.Z();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+                #region 特殊字符
+                case "Character26":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.SpecialCharacters();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 汉字
+                #region 富强民主 文明和谐
+                case "Character27":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters0();
+                    CSys.DrawDots();
+                    break;
+                case "Character28":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters1();
+                    CSys.DrawDots();
+                    break;
+                case "Character29":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters2();
+                    CSys.DrawDots();
+                    break;
+                case "Character30":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters3();
+                    CSys.DrawDots();
+                    break;
+                case "Character31":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters4();
+                    CSys.DrawDots();
+                    break;
+                case "Character32":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters5();
+                    CSys.DrawDots();
+                    break;
+                case "Character33":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters6();
+                    CSys.DrawDots();
+                    break;
+                case "Character34":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters7();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 自由平等 公正法治
+                case "Character35":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters8();
+                    CSys.DrawDots();
+                    break;
+                case "Character36":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters9();
+                    CSys.DrawDots();
+                    break;
+                case "Character37":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters10();
+                    CSys.DrawDots();
+                    break;
+                case "Character38":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters11();
+                    CSys.DrawDots();
+                    break;
+                case "Character39":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters12();
+                    CSys.DrawDots();
+                    break;
+                case "Character40":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters13();
+                    CSys.DrawDots();
+                    break;
+                case "Character41":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters14();
+                    CSys.DrawDots();
+                    break;
+                case "Character42":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters15();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #region 爱国敬业 诚信友善
+                case "Character43":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters16();
+                    CSys.DrawDots();
+                    break;
+                case "Character44":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters17();
+                    CSys.DrawDots();
+                    break;
+                case "Character45":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters18();
+                    CSys.DrawDots();
+                    break;
+                case "Character46":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters19();
+                    CSys.DrawDots();
+                    break;
+                case "Character47":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters20();
+                    CSys.DrawDots();
+                    break;
+                case "Character48":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters21();
+                    CSys.DrawDots();
+                    break;
+                case "Character49":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters22();
+                    CSys.DrawDots();
+                    break;
+                case "Character50":
+                    CSys.ClearDotLocInfor();
+                    CharacterAlgo.ChineseCharacters23();
+                    CSys.DrawDots();
+                    break;
+                #endregion
+
+                #endregion
+
+                #endregion
 
                 default:
                     break;
             }
-
-
-
         }
 
 
@@ -334,7 +699,7 @@ namespace GraphElementGenerationSYS
                     CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
                     CSys.Height = canvas.Height;
                     CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    CSys.ShowGrid(10);
+                    CSys.ShowGrid(50);
                     CSys.DrawDots();
                 }
             }
@@ -353,10 +718,34 @@ namespace GraphElementGenerationSYS
                     CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
                     CSys.Height = canvas.Height;
                     CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    CSys.ShowGrid(10);
+                    CSys.ShowGrid(50);
                     CSys.DrawDots();
                 }
             }
+        }
+
+        /// <summary>
+        /// 该值指示显示代码窗口按钮是否点击过了。默认false，没点击过。
+        /// </summary>
+        public static bool CodeFormButtonClicked=false;
+
+        /// <summary>
+        /// 显示代码窗体按钮点击事件
+        /// </summary>
+        private void CodeButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (CodeFormButtonClicked)//点击过的话就不执行后面的窗体show操作
+            {
+                return;
+            }
+
+            CodeForm codeForm = new CodeForm();
+            DoubleAnimation daV = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(0.4)));//设置动画-淡入效果
+            codeForm.BeginAnimation(OpacityProperty, daV);
+            codeForm.Show();//显示窗体
+
+            CodeFormButtonClicked = true;//表明此按钮已经点击过
+
         }
     }
 }

@@ -39,7 +39,7 @@ namespace GraphElementGenerationSYS.Algorithm
 
         public static int CellNum { get; set; }//单元格个数
 
-        public static int[,] CanvasDotsArray=new int[10,10];//用于保存单元格点的数组，1代表某格有点
+        private static int[,] CanvasDotsArray=new int[50,50];//用于保存单元格点的数组，1代表某格有点
 
         /// <summary>
         /// 创建坐标系
@@ -55,13 +55,27 @@ namespace GraphElementGenerationSYS.Algorithm
         }
 
         /// <summary>
+        /// 使演示面板回到启动时状态
+        /// </summary>
+        public static void CanvasToDefault()
+        {
+            canvas.Background = new SolidColorBrush(Color.FromRgb(67, 67, 70));
+            ClearCSys();
+            ClearDotLocInfor();
+        }
+
+        /// <summary>
         /// 显示坐标网格
         /// </summary>
+        /// <param name="CellNum">单元格数,此值非负</param>
         public static void ShowGrid(int CellNum)
         {
-            CSys.CellNum= CellNum;
-            //CanvasDotsArray = new int[CellNum,CellNum];//初始化用于保存储存在Canvas上的点的位置信息
+            if (CellNum<0)//如果参数值有误，直接返回
+            {
+                return;
+            }
 
+            CSys.CellNum= CellNum;
             Point StartPoint = new Point();//起点
             Point EndPoint = new Point();//终点
             StartPoint.X = 0;
@@ -93,11 +107,11 @@ namespace GraphElementGenerationSYS.Algorithm
         }
 
         /// <summary>
-        /// 清空Canvas
+        /// 释放演示面板上所有对象
         /// </summary>
         public static void ClearCSys()
         {
-            canvas.Children.Clear();//情况画布上所有对象
+            canvas.Children.Clear();//清空画布上所有对象
         }
 
         /// <summary>

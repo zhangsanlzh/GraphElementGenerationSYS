@@ -22,14 +22,19 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="local:MainWindow">
                         <Border BorderThickness="1" BorderBrush="{StaticResource DarkBlue}">
-                            <Grid Background="White">
+                            <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="30"></RowDefinition>
                                     <RowDefinition Height="*"></RowDefinition>
                                 </Grid.RowDefinitions>
 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
                                 <!--Form功能条-->
-                                <Grid x:Name="ddd" Grid.Row="0" MouseDown="Window_MouseDown" Background="{StaticResource DarkBlack}">
+                                <Grid x:Name="ddd" Grid.Row="0" Grid.Column="0" MouseDown="Window_MouseDown" Background="{StaticResource DarkBlack}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -56,7 +61,7 @@
                                 </Grid>
 
                                 <!--下方界面-->
-                                <Grid Grid.Row="1">
+                                <Grid Grid.Row="1" Grid.Column="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -74,7 +79,7 @@
                                             <RadioButton GroupName="one" Style="{StaticResource StraitLineRadioButtonStyle}"
                                                          Content="\" Click="RadioButton_Click"  x:Name="StraitLine"/>
                                             <RadioButton GroupName="one" Style="{StaticResource CurveRadioButtonStyle}"
-                                                         Content="~" Click="RadioButton_Click"  x:Name="Curve"/>
+                                                         Content="☆" Click="RadioButton_Click"  x:Name="Polygon"/>
                                             <RadioButton GroupName="one" Style="{StaticResource CharacterRadioButtonStyle}"
                                                          Content="A" Click="RadioButton_Click" x:Name="Character"/>
                                             <RadioButton GroupName="one" Style="{StaticResource TransformRadioButtonStyle}"
@@ -112,14 +117,36 @@
                                         <!--右侧功能条-->
                                         <Grid Grid.Column="2" Width="40" Background="{StaticResource FontDarkGray}">
                                             <StackPanel Margin="0 50 0 0" Width="50" Background="{StaticResource FontDarkGray}">
-                                                <RadioButton GroupName="two" Style="{StaticResource CircleRadioButtonStyle}" 
-                                                         Content="⚪" Click="RadioButton_Click" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                                <Button x:Name="CodeFormButton" Style="{StaticResource CodeButtonStyle}" Content="C" 
+                                                             Click="CodeButton_Checked"/>
                                             </StackPanel>
                                         </Grid>
-
-
                                     </Grid>
                                 </Grid>
+
+                                <!--<Grid x:Name="coll" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed" Style="{StaticResource ShowCodeGridStyle}">
+                                    <Grid.Effect>
+                                        <DropShadowEffect BlurRadius="24" Color="Beige" ShadowDepth="3"/>
+                                    </Grid.Effect>
+
+                                    <Border CornerRadius="0 100 0 0" BorderBrush="Orange" BorderThickness="1">
+                                        <StackPanel>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
+                                    </StackPanel>
+                                    </Border>
+                                </Grid>-->
 
                             </Grid>
                         </Border>

@@ -19,7 +19,6 @@ namespace GraphElementGenerationSYS.Algorithm
             RectangleFillAlgo(2, 2, 5, 4);
         }
 
-
         /// <summary>
         /// 矩形生成算法-不填充
         /// </summary>
@@ -27,7 +26,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// <param name="height">高</param>
         /// <param name="Sx">矩形左上角点横坐标</param>
         /// <param name="Sy">矩形左上角点纵坐标</param>
-        private static void RectangleNoFillAlgo(int Sx, int Sy,int width,int height)
+        public static void RectangleNoFillAlgo(int Sx, int Sy,int width,int height)
         {
             CSys.SetDotLocInfor(new Point(Sx,Sy));
             for (int i = 0; i < width; i++)
@@ -49,7 +48,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// <param name="height">高</param>
         /// <param name="Sx">矩形左上角点横坐标</param>
         /// <param name="Sy">矩形左上角点纵坐标</param>
-        private static void RectangleFillAlgo(int Sx, int Sy, int width, int height)
+        public static void RectangleFillAlgo(int Sx, int Sy, int width, int height)
         {
             CSys.SetDotLocInfor(new Point(Sx, Sy));
             for (int i = 0; i < width; i++)

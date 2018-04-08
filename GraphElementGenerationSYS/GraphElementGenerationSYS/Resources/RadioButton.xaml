@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:GraphElementGenerationSYS.Resources">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--Function Bar RadioButton Base Style-->
     <Style TargetType="{x:Type RadioButton}" x:Key="FuctionBarRadioButtonStyle">
@@ -58,10 +57,10 @@
         <Setter Property="ToolTip" Value="直线"/>
     </Style>
     
-    <!--Curve RadioButton Style-->
+    <!--Polygon RadioButton Style-->
     <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource FuctionBarRadioButtonStyle}" x:Key="CurveRadioButtonStyle">
-        <Setter Property="ToolTip" Value="曲线"/>
-        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="ToolTip" Value="多边形"/>
+        <Setter Property="FontSize" Value="28"/>
     </Style>
 
     <!--Character RadioButton Style-->
