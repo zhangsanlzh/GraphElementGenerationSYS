@@ -1,0 +1,167 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Circle5"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Circle5">
+
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">Bresenham画椭圆法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle5\BresenhamEllipseAlgo.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）Bresenham画椭圆法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    中点画椭圆法中，计算判别式d使用了浮点运算，影响了椭圆的生成效率。如果能将判别式规约到整数运算，则可以简化计算，提高效率。于是人们针对中点画椭圆法进行了多种改进，提出了很多种中点生成椭圆的整数型算法，Bresenham椭圆生成算法就是其中之一。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    在生成椭圆上部区域时，以x轴为步进方向，如图（5-a）所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle5\1335281890_2564.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（2）Bresenham椭圆生成算法判别式</Paragraph>
+
+                <Paragraph Margin="10">
+                    x每步进一个单位，就需要在判断y保持不变还是也步进减1，bresenham算法定义判别式为：D = d1 – d2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    如果D&lt;0，则取P1为下一个点，否则，取P2为下一个点。采用判别式D，避免了中点算法因y-0.5而引入的浮点运算，使得判别式规约为全整数运算，算法效率得到了很大的提升。根据椭圆方程，可以计算出d1和d2分别是：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    d1 = a2(yi2 – y2)
+                </Paragraph>
+                
+                <Paragraph Margin="10">
+                    d2 = a2(y2 – yi+12)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    以(0, b)作为椭圆上部区域的起点，将其代入判别式D可以得到如下递推关系：
+                </Paragraph>
+                               
+                <Paragraph Margin="10">
+                    Di+1 = Di + 2b2(2xi + 3)(Di&lt;0)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    Di+1 = Di + 2b2(2xi + 3) – 4a2(yi - 1) (Di >= 0)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    D0 = 2b2 – 2a2b + a2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di+1 = F(xi+1+1, yi+1-0.5) = b2(xi+2)2 + a2(yi-1.5)2 – a2b2 = d1 + b2(2xi+3) + a2(-2yi+2)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    在生成椭圆下部区域时，以y轴为步进方向，如图（5-b）所示，y每步进减一个单位，就需要在判断x保持不变还是步进加一个单位，对于下部区域，计算出d1和d2分别是：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    d1 = b2(xi+12 – x2)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    d2 = b2(x2 – xi2)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    以(xp, yp)作为椭圆下部区域的起点，将其代入判别式D可以得到如下递推关系：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    Di+1 = Di – 4a2(yi - 1) + 2a2(Di&lt;0)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    Di+1 = Di + 2b2(xi + 1) – 4a2(y - 1) + 2a2 + b2 (Di >= 0)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    D0 = b2(xp + 1)2 +b2xp2 - 2a2b2 + 2a2(yp - 1)2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    根据以上分析，得到Bresenham椭圆生成算法如上图所示。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>EllipsePlot(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自CSDN博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:吹泡泡的小猫
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://blog.csdn.net/orbit/article/details/7496008
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者原创！
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+
+</Page>

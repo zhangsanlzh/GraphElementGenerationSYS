@@ -1,0 +1,103 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.StraitLine2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="StraitLine2">
+
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">Bresenham画线法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\straitLine2\BresenhamStraitLine.png"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）Bresenham画线法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    这种画线算法的思想和中点画线的一致，只是在判断取哪个点时，不是看它位于中点的上边还是下边，而是将这俩个点到直线上那个点的距离相减，判断其正负，如果下边的点到直线实际点距离远则的d1-d2>=0那么取上边的点y1+1,同样也是代入直线化解可以得出下面结论：
+                </Paragraph>
+
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph Margin="10">
+                            当d1-d2&lt;0时，d=d+2*dy.
+                        </Paragraph>
+                    </ListItem>
+
+                    <ListItem>
+                        <Paragraph Margin="10">
+                            当d1-d2>=0时，d=d+2*dy-2*dx.
+                        </Paragraph>
+                    </ListItem>
+
+                    <ListItem>
+                        <Paragraph Margin="10">
+                            d的初始值为  d=2*dy-dx.
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                               
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>SetPointsLocInfor(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自博客园博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:浮生缘，半生梦
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://www.cnblogs.com/llsq/p/7506597.html
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者！
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+</Page>

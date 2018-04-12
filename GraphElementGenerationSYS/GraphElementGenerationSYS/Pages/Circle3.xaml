@@ -1,0 +1,84 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Circle3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Circle3">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">快速画圆法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle3\QuickCircleAlgo.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）快速画圆法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    快速画圆法的生成效果和中点画圆法差不多，但是判别式的计算只用了加减法，没有用任何乘法，因此被称为快速画圆法。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>SetPointsLocInfor(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自CSDN博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:tzb592825420。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://blog.csdn.net/u013044116/article/details/49305017
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者原创！感谢博主转载！
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+
+</Page>

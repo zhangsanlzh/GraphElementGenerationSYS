@@ -1,0 +1,208 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Circle4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Circle4">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">中点画椭圆法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle4\MidpointEllipseAlgo.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）中点画椭圆法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    中点在坐标原点，焦点在坐标轴上（轴对齐）的椭圆的平面集合方程是：
+                    x2 / a2 + y2 / b2 = 1，也可以转化为如下非参数化方程形式：
+                    F(x, y) = b2x2 + a2y2 - a2b2 = 0（方程 1）
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    无论是中点画线算法、中点画圆算法还是本节要介绍的中点画椭圆算法，对选择x方向像素Δ增量还是y方向像素Δ增量都是很敏感的。举个例子，如果某段圆弧上，x方向上增量+1个像素时，y方向上的增量如果
+                    &lt;1，则比较适合用中点算法，如果y方向上的增量 >1，就会产生一些跳跃的点，最后生成的光栅位图圆弧会有一些突变的点，看起来好像不在圆弧上。因此，对于中点画圆弧算法，要区分出椭圆弧上哪段Δx增
+                        量变化显著，哪段Δy增量变化显著，然后区别对待。由于椭圆的对称性，我们只考虑第一象限的椭圆圆弧，如图（2）所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle4\1335281475_7185.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（2）第一象限椭圆弧示意图</Paragraph>
+
+                <Paragraph Margin="10">
+                    定义椭圆弧上某点的切线法向量N如下：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle4\1335281517_5251.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    对方程1分别求x偏导和y偏导，最后得到椭圆弧上(x,y)点处的法向量是（2b2x, 2a2y）。dy/dx = -1的点是椭圆弧上的分界点。此点之上的部分（橙褐色部分）椭圆弧法向量的y分量比较大，
+                    即：2b2(x + 1)&lt;2a2(y – 0.5)；此点之下的部分（蓝紫色部分）椭圆弧法向量的x分量比较大，即：2b2(x + 1) >2a2(y – 0.5)。
+                    对于图（2）中橙褐色标识的上部区域，y方向每变化1个单位，x方向变化大于一个单位，因此中点算法需要沿着x方向步进画点，x每次增量加1，求y的值。
+                    同理，对于图（2）中蓝紫色标识的下部区域，中点算法沿着y方向反向步进，y每次减1，求x的值。先来讨论上部区域椭圆弧的生成，如图（3）所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle4\1335281567_5776.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（3）中点画椭圆算法对上部区域处理示意图</Paragraph>
+
+                <Paragraph Margin="10">
+                    假设当前位置是P(xi, yi)，则下一个可能的点就是P点右边的P1(xi+1, yi)点或右下方的P2(xi+1, yi-1)点，取舍的方法取决于判别式di，di的定义如下：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di = F(xi+1, yi-0.5) = b2(xi+1)2 + a2(yi-0.5)2 – a2b2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    若di&lt;0，表示像素点P1和P2的中点在椭圆内，这时可取P1为下一个像素点。此时xi+1 = xi + 1，yi+1 = yi，代入判别式di得到di+1：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di+1 = F(xi+1+1, yi+1-0.5) = b2(xi+2)2 + a2(yi-0.5)2 – a2b2 = di + b2(2xi + 3)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    计算出di的增量是b2(2xi + 3)。同理，若di >= 0，表示像素点P1和P2的中点在椭圆外，这时应当取P2为下一个像素点。此时xi+1 = xi + 1，yi+1 = yi - 1，代入判别式di得到di+1：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di+1 = F(xi+1+1, yi+1-0.5) = b2(xi+2)2 + a2(yi-1.5)2 – a2b2 = d1 + b2(2xi+3) + a2(-2yi+2)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    计算出di的增量是b2(2xi+3)+a2(-2yi+2)。计算di的增量的目的是减少计算量，提高算法效率，每次判断一个点时，不必完整的计算判别式di，只需在上一次计算出的判别式上增加一个增量即可。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    接下来继续讨论下部区域椭圆弧的生成，如图（4）所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle4\1335281653_6831.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（4）中点画椭圆算法对下部区域处理示意图</Paragraph>
+
+                <Paragraph Margin="10">
+                    假设当前位置是P(xi, yi)，则下一个可能的点就是P点左下方的P1(xi -1, yi-1)点或下方的P2(xi, yi-1)点，取舍的方法同样取决于判别式di，di的定义如下：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di = F(xi+0.5, yi-1) = b2(xi+0.5)2 + a2(yi-1)2 – a2b2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    若di&lt;0，表示像素点P1和P2的中点在椭圆内，这时可取P2为下一个像素点。此时xi+1 = xi + 1，yi+1 = yi - 1，代入判别式di得到di+1：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di+1 = F(xi+1+0.5, yi+1-1) = b2(xi+1.5)2 + a2(yi-2)2 – a2b2 = di + b2(2xi+2)+a2(-2yi+3)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    计算出di的增量是b2(2xi+2)+a2(-2yi+3)。同理，若di >= 0，表示像素点P1和P2的中点在椭圆外，这时应当取P1为下一个像素点。此时xi+1 = xi，yi+1 = yi - 1，代入判别式di得到di+1：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    di+1 = F(xi+1+0.5, yi+1-1) = b2(xi+0.5)2 + a2(yi-2)2 – a2b2 = d1 + a2(-2yi+3)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    计算出di的增量是a2(-2yi+3)。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    中点画椭圆算法从(0, b)点开始，第一个中点是(1, b – 0.5)，判别式d的初始值是：d0 = F(1, b–0.5) = b2 + a2(-b+0.25)
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    上部区域生成算法的循环终止条件是：2b2(x + 1) >= 2a2(y – 0.5)，下部区域的循环终止条件是y = 0，至此，中点画椭圆算法就可以完整给出了。正如上图所示。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>EllipsePlot(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自CSDN博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:吹泡泡的小猫
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://blog.csdn.net/orbit/article/details/7496008
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者原创！
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+</Page>

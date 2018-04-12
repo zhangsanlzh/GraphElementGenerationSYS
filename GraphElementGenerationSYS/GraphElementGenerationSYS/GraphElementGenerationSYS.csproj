@@ -83,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Algorithm\TransformAlgo.cs" />
+    <Compile Include="Pages\Character.xaml.cs">
+      <DependentUpon>Character.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Circle0.xaml.cs">
       <DependentUpon>Circle0.xaml</DependentUpon>
     </Compile>
@@ -111,7 +115,67 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Character.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Circle0.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Circle1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Circle2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Circle3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Circle4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Circle5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DefaultPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Polygon0.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Polygon1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Polygon2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Square0.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Square1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StraitLine0.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StraitLine1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StraitLine2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +209,48 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Circle1.xaml.cs">
+      <DependentUpon>Circle1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Circle2.xaml.cs">
+      <DependentUpon>Circle2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Circle3.xaml.cs">
+      <DependentUpon>Circle3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Circle4.xaml.cs">
+      <DependentUpon>Circle4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Circle5.xaml.cs">
+      <DependentUpon>Circle5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DefaultPage.xaml.cs">
+      <DependentUpon>DefaultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Polygon0.xaml.cs">
+      <DependentUpon>Polygon0.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Polygon1.xaml.cs">
+      <DependentUpon>Polygon1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Polygon2.xaml.cs">
+      <DependentUpon>Polygon2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Square0.xaml.cs">
+      <DependentUpon>Square0.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Square1.xaml.cs">
+      <DependentUpon>Square1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StraitLine0.xaml.cs">
+      <DependentUpon>StraitLine0.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StraitLine1.xaml.cs">
+      <DependentUpon>StraitLine1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StraitLine2.xaml.cs">
+      <DependentUpon>StraitLine2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -367,6 +473,94 @@
     <EmbeddedResource Include="images\ChineseCharacters17.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle0\0_13290540567967.png" />
+    <Resource Include="Pages\images\circle0\algo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle1\BresenhamAlgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle2\PosiAndNegaCircleAlgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle2\0_1329054308cIU5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle3\QuickCircleAlgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle4\1335281475_7185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle4\MidpointEllipseAlgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle4\1335281517_5251.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle4\1335281567_5776.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle4\1335281653_6831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle5\BresenhamEllipseAlgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\circle5\1335281890_2564.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\square0\square0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\defaultPage\defaultPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\square1\square1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine0\DrawStraitLineDDA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine0\20160803094019914.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine0\20160803094540729.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine1\20161230185308448.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine1\CenterStraitLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine2\BresenhamStraitLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon0\2018-04-12_152707.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon0\2018-04-12_152317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon2\2018-04-12_154415.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\images\Polygon1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon2\2018-04-12_155310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon2\2018-04-12_155849.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\Polygon2\2018-04-12_160142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\character\2018-04-12_160927.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

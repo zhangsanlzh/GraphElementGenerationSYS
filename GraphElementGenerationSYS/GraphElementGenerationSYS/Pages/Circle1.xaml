@@ -1,0 +1,60 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Circle1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Circle1">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">Bresenham画圆法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle1\BresenhamAlgo.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）Bresenham画圆法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    此方法为改进后的中点画圆算法。与中点画圆算法相比，改变了系数的值。
+                    归根结底是一种方法。当用此法画圆且所画圆较小时，二者差别不大。
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle0\algo.png" Width="400"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（2）中点画圆算法</Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+</Page>

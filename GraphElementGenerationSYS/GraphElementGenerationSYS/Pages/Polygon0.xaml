@@ -1,0 +1,58 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Polygon0"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Polygon0">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">正三角形生成法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon0\2018-04-12_152317.png" />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">法1：顶点画三角形法</Paragraph>
+
+                <Paragraph Margin="10">
+                    这种画法需要先知道上顶点的坐标，然后据此求出下边两个顶点的坐标。最后依次连接各点。
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon0\2018-04-12_152707.png"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">法2：固定底边画三角形法</Paragraph>
+
+                <Paragraph Margin="10">
+                    这种画法需要先知道底边左顶点的坐标和边长，然后据此求出其它两个顶点的坐标。最后依次连接各点。
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+</Page>

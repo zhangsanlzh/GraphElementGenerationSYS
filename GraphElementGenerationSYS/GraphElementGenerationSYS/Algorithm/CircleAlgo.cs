@@ -217,7 +217,6 @@ namespace GraphElementGenerationSYS.Algorithm
             BresenhamEllipseAlgo(4,4,4,2);
         }
 
-
         /// <summary>
         /// 中点椭圆算法-不可被外部显式调用
         /// </summary>

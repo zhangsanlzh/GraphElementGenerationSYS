@@ -86,7 +86,7 @@
 
     <!--查看代码按钮样式-->
     <Style TargetType="{x:Type Button}" x:Key="CodeButtonStyle">
-        <Setter Property="ToolTip" Value="查看算法"/>
+        <Setter Property="ToolTip" Value="查看说明文档"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#C5C5C5"/>
         <Setter Property="BorderThickness" Value="0"/>

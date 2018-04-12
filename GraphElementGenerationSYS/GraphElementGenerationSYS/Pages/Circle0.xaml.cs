@@ -24,5 +24,17 @@ namespace GraphElementGenerationSYS.Pages
         {
             InitializeComponent();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://blog.csdn.net/u013044116/article/details/49305017");
+            }
+            catch(Exception)
+            {
+
+            }
+        }
     }
 }

@@ -1,0 +1,146 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.StraitLine0"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="StraitLine0">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">DDA画线法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\straitLine0\DrawStraitLineDDA.png" />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）DDA画线法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    已知两个点，（已知的点），确定离散的若干个点，逐个点画起来，就可以形成一条直线。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    设直线两端点为：起点A(x0,y0)；终点为B(x1,y1)。 则直线的斜率和方程为：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\straitLine0\20160803094019914.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    下面分为两种情况考虑：当斜率小于等于1的时候，x每次增加1，y最多增加1。
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\straitLine0\20160803094540729.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    而当斜率大于1的时候，让y每次递增1，x每次递增最多1
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>SetPointsLocInfor(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、算法说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    在屏幕上绘线，要考虑线的方向。虽然数学上直线没有方向，但算法实现仍要考虑方向。否则就不能任意输入两个点
+                    而绘制出需要的直线。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    根据直线的走向可将线分四类：左上到右下，右上到左下，左下到右上，右下到左上。分别以(Sx,Sy),(Ex,Ey)表示起点
+                    、终点的坐标。有：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    直线自左上到右下，随着x坐标的增大，y也在增大（屏幕左上角为原点，水平方向为x轴，竖直方向为y轴）。Sx&lt;Ex; Sy&lt;Ey                    
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    直线自右上到左下，随着x坐标的减小，y在增大（屏幕左上角为原点，水平方向为x轴，竖直方向为y轴）。Sx&gt;Ex; Sy&lt;Ey
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    直线自左下到右上，随着x坐标的增大，y在减小（屏幕左上角为原点，水平方向为x轴，竖直方向为y轴）。Sx&lt;Ex; Sy&gt;Ey
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    直线自右上到左下，随着x坐标的减小，y也在减小（屏幕左上角为原点，水平方向为x轴，竖直方向为y轴）。Sx&gt;Ex; Sy&gt;Ey
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    而根据Sx与Ex的大小关系，又可以将上述四种情况归纳为两类：左上到右下，左下到右上为一类。另外两种情况为一类。而遇到线趋势往x轴反方向
+                    的情况，就互换起点与终点的坐标，按照互换后的坐标重新连线。这样就可以实现任意给定两个点坐标作一条起终于这两点的直线 。具体算法如上图所示。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>五、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自CSDN博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:wodownload2
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://blog.csdn.net/wodownload2/article/details/52093952
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者原创！
+                </Paragraph>
+
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+</Page>

@@ -69,6 +69,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <!--Content Presenter Area-->
+                                    
                                     <Border Grid.Column="1" Background="#F6F6F6">
                                         <ScrollViewer Style="{DynamicResource ScrollViewerStyle}">
                                             <!--右边文本显示列-->

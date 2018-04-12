@@ -1,0 +1,85 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Polygon2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Polygon2">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">任意多边形生成</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon2\2018-04-12_154415.png" Width="490"  />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">任意多边形生成法</Paragraph>
+
+                <Paragraph Margin="10">
+                    <Bold>二、算法说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    此算法调用了<Bold>StraitLineAlgo</Bold>模块的画线方法。此模块此方法意味采用DDA方法画一条直线。
+                    该方法需要两个参数。每个都代表一个点。每个点都有一x,y坐标。此点的结构定义如下所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon2\2018-04-12_155310.png" Width="470" />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">存储点的坐标的点结构</Paragraph>
+
+                <Paragraph Margin="10">
+                    画多边形时时如此调用。
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon2\2018-04-12_155849.png" Width="470" />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    画出的图形如下所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\Polygon2\2018-04-12_160142.png" Width="300" />
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+
+</Page>

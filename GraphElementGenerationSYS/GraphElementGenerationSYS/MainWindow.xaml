@@ -117,36 +117,12 @@
                                         <!--右侧功能条-->
                                         <Grid Grid.Column="2" Width="40" Background="{StaticResource FontDarkGray}">
                                             <StackPanel Margin="0 50 0 0" Width="50" Background="{StaticResource FontDarkGray}">
-                                                <Button x:Name="CodeFormButton" Style="{StaticResource CodeButtonStyle}" Content="C" 
+                                                <Button x:Name="CodeFormButton" Style="{StaticResource CodeButtonStyle}" Content="D" 
                                                              Click="CodeButton_Checked"/>
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
                                 </Grid>
-
-                                <!--<Grid x:Name="coll" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Visibility="Collapsed" Style="{StaticResource ShowCodeGridStyle}">
-                                    <Grid.Effect>
-                                        <DropShadowEffect BlurRadius="24" Color="Beige" ShadowDepth="3"/>
-                                    </Grid.Effect>
-
-                                    <Border CornerRadius="0 100 0 0" BorderBrush="Orange" BorderThickness="1">
-                                        <StackPanel>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                        <TextBlock>sfgsgsggsdgsgsgsggsgsg</TextBlock>
-                                    </StackPanel>
-                                    </Border>
-                                </Grid>-->
 
                             </Grid>
                         </Border>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\App.xaml
-101774163317
+25662895934
 
-131115293600
+29-753347431
 14434534373
-Forms\CodeForm.xaml;MainWindow.xaml;Pages\Circle0.xaml;Resources\Button.xaml;Resources\Canvas.xaml;Resources\Color.xaml;Resources\Font.xaml;Resources\ListBox.xaml;Resources\MenuList.xaml;Resources\RadioButton.xaml;
+Forms\CodeForm.xaml;MainWindow.xaml;Pages\Character.xaml;Pages\Circle0.xaml;Pages\Circle1.xaml;Pages\Circle2.xaml;Pages\Circle3.xaml;Pages\Circle4.xaml;Pages\Circle5.xaml;Pages\DefaultPage.xaml;Pages\Polygon0.xaml;Pages\Polygon1.xaml;Pages\Polygon2.xaml;Pages\Square0.xaml;Pages\Square1.xaml;Pages\StraitLine0.xaml;Pages\StraitLine1.xaml;Pages\StraitLine2.xaml;Resources\Button.xaml;Resources\Canvas.xaml;Resources\Color.xaml;Resources\Font.xaml;Resources\ListBox.xaml;Resources\MenuList.xaml;Resources\RadioButton.xaml;
 
 False
 

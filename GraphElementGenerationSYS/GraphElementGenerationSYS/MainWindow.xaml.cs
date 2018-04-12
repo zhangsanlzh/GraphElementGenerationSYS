@@ -8,6 +8,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Xml;
 using GraphElementGenerationSYS.Forms;
+using System.Threading;
 
 namespace GraphElementGenerationSYS
 {
@@ -670,9 +671,17 @@ namespace GraphElementGenerationSYS
 
                 #endregion
 
+                case "Transform0":
+                    CSys.ClearDotLocInfor();
+                    TransformAlgo.Translation();
+                    CSys.DrawDots();
+
+                    break;
+
                 default:
                     break;
             }
+
         }
 
 

@@ -1,0 +1,32 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.DefaultPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="DefaultPage">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section>
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\defaultPage\defaultPage.png"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+                
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+    
+</Page>

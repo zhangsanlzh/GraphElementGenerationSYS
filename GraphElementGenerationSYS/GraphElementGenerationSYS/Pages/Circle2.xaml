@@ -1,0 +1,127 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Circle2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Circle2">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">正负判定画圆算法</Paragraph>
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle2\PosiAndNegaCircleAlgo.png" Width="470"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（1）正负判定画圆法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、算法原理</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    正负法根据圆函数：F(x, y）= x2 + y2 – R2的值，将平面区域分成圆内和圆外，如图（2）所示：
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\circle2\0_1329054308cIU5.png" Width="400"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">图（2）</Paragraph>
+
+                <Paragraph Margin="10">
+                    假设圆弧的生成方向是从A到B方向，当某个点Pi被确定以后，Pi的下一个点Pi+1的取值就根据F(xi, yi）的值进行判定，判定的原则是：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    1、当F(xi, yi）≤ 0时：取xi+1 = xi+1，yi+1 = yi。即向右走一步，从圆内走向圆外。对应图（3-a）中的从Pi到Pi+1。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    2、当F(xi, yi）> 0时：取xi+1 = xi，yi+1 = yi - 1。即向下走一步，从圆外走向圆内。对应图（3-b）中的从Pi到Pi+1。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    由于下一个点的取向到底是向圆内走还是向圆外走取决于F(xi, yi）的正负，因此称为正负法。对于判别式F(xi, yi）的递推公式，也要分两种情况分别推算：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    1、当F(xi, yi）≤ 0时，Pi的下一个点Pi+1取xi+1 = xi+1，yi+1 = yi，判别式F(xi+1, yi+1）的推算过程是：
+                    F(xi+1, yi+1）= F(xi+1，yi) = (xi+1)2+yi2-R2 = (xi2+yi2-R2)+2xi+1 = F(xi，yi)+2xi+1
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    2、当F(xi, yi）> 0时，Pi的下一个点Pi+1取xi+1 = xi，yi+1 = yi - 1，判别式F(xi+1, yi+1）的推算过程是：
+                    F(xi+1, yi+1）= F(xi，yi-1) = xi2+(yi-1)2 - R2 = (xi2+yi2-R2) - 2yi + 1 = F(xi，yi) - 2yi+1
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    改进的中点划线算法和正负法虽然都避免了浮点运算，并且计算判别式时用到的乘法都是乘2运算，可以用移位代替，
+                    但是实际效率缺有很大差别。因为正负法并不是严格按照x方向步进的，因此就会出现在某个点的下一个点在两个位置
+                    上重复画点的问题，增加了不必要的计算。此外，从生成圆的质量看，中点画圆法和改进的中点画圆法都比正负法效果好。
+                </Paragraph>
+
+                <Paragraph Margin="10">根据上面的分析，可以写出中点画圆法的算法如上图所示。</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>三、特别说明</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    算法中的
+                    <Bold>SetPointsLocInfor(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
+                    要显示的点的位置。具体见源码
+                    <Bold>Algorithm</Bold> 模块。
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>四、特别感谢</Bold>
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    本文第二节算法原理部分摘自CSDN博客。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博主:tzb592825420。
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    博文地址：
+                    <Hyperlink Click="Hyperlink_Click">
+                        https://blog.csdn.net/u013044116/article/details/49305017
+                    </Hyperlink>
+                </Paragraph>
+
+                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
+                    感谢作者原创！感谢博主转载！
+                </Paragraph>
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+</Page>
