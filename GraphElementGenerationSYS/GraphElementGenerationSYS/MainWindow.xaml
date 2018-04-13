@@ -10,7 +10,8 @@
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"              
         Title="MainWindow" Height="620" Width="900"
-        Style="{DynamicResource MainWindowStyle}">
+        Style="{DynamicResource MainWindowStyle}"
+        Loaded="MainWindow_Loaded">
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0"/>
@@ -118,7 +119,9 @@
                                         <Grid Grid.Column="2" Width="40" Background="{StaticResource FontDarkGray}">
                                             <StackPanel Margin="0 50 0 0" Width="50" Background="{StaticResource FontDarkGray}">
                                                 <Button x:Name="CodeFormButton" Style="{StaticResource CodeButtonStyle}" Content="D" 
-                                                             Click="CodeButton_Checked"/>
+                                                             Click="CodeButton_Click"/>
+                                                <Button x:Name="RunButton" Style="{StaticResource RunButtonStyle}" Content="▶" 
+                                                             Click="RunButton_Click"/>
                                             </StackPanel>
                                         </Grid>
                                     </Grid>

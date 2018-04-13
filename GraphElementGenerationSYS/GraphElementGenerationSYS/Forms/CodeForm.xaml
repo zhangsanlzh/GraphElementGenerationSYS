@@ -45,7 +45,7 @@
                                     <!--Form Icon-->
                                     <Border Grid.Column="0" Margin="5 0 0 0 ">
                                         <Button Style="{StaticResource MenuButtonStyle}" Click="WindowMenu">
-                                            <TextBlock FontWeight="Bold" Foreground="#000000" FontFamily="{StaticResource HandWrite}" Text="Code Form" />
+                                            <TextBlock FontWeight="Bold" Foreground="#000000" FontFamily="{StaticResource HandWrite}" Text="Doc Form" />
                                         </Button>
                                     </Border>
 

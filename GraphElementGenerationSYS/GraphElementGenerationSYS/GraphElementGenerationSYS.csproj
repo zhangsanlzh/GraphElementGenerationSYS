@@ -84,6 +84,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Algorithm\TransformAlgo.cs" />
+    <Compile Include="Pages\CanvasContentsMFrmLoad.xaml.cs">
+      <DependentUpon>CanvasContentsMFrmLoad.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Character.xaml.cs">
       <DependentUpon>Character.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CanvasContentsMFrmLoad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Character.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +183,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\StraitLine2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Transform0.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Transform1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,6 +265,12 @@
     </Compile>
     <Compile Include="Pages\StraitLine2.xaml.cs">
       <DependentUpon>StraitLine2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transform0.xaml.cs">
+      <DependentUpon>Transform0.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transform1.xaml.cs">
+      <DependentUpon>Transform1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -561,6 +582,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pages\images\character\2018-04-12_160927.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="startupScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\transform0\2018-04-13_143739.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\transform1\2018-04-13_145942.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\qrcode_1523618340690.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

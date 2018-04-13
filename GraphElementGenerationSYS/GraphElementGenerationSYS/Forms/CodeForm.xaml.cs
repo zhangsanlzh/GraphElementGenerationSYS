@@ -215,6 +215,20 @@ namespace GraphElementGenerationSYS.Forms
                     break;
                 #endregion
 
+                #region 变换
+                case "Transform0":
+                    Pages.Transform0 translation0 = new Pages.Transform0();
+                    (this.GetTemplateChild("CodeFrame") as Frame).Content = translation0;
+                    
+                    break;
+
+                case "Transform1":
+                    Pages.Transform1 translation1 = new Pages.Transform1();
+                    (this.GetTemplateChild("CodeFrame") as Frame).Content = translation1;
+
+                    break;
+                #endregion
+
                 default:
                     Pages.DefaultPage defaultPage = new Pages.DefaultPage();
                     (this.GetTemplateChild("CodeFrame") as Frame).Content = defaultPage;

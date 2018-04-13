@@ -9,6 +9,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using GraphElementGenerationSYS.Forms;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace GraphElementGenerationSYS
 {
@@ -20,6 +21,22 @@ namespace GraphElementGenerationSYS
         public MainWindow()
         {
             InitializeComponent();                
+        }
+
+        Pages.CanvasContentsMFrmLoad canvasContent;
+
+        /// <summary>
+        /// MainWindow加载事件
+        /// </summary>
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var canvas = (Canvas)this.GetTemplateChild("FuncShowCanvas");//找到功能演示面板   
+            
+            //加载启动文档，设置好宽高后并将之显示在演示区域
+            canvasContent = new Pages.CanvasContentsMFrmLoad();
+            canvasContent.Width = canvas.Width;
+            canvasContent.Height = canvas.Height;
+            canvas.Children.Add(canvasContent);
         }
 
         /// <summary>
@@ -68,26 +85,54 @@ namespace GraphElementGenerationSYS
         }
 
         /// <summary>
+        /// 指示点击过的项的名称
+        /// </summary>
+        public static string CheckedItemName = "";
+
+        /// <summary>
         /// 功能按钮点击事件
         /// </summary>
         private void RadioButton_Click(object sender, RoutedEventArgs e)
         {
             var listBox =(ListBox)this.GetTemplateChild("FunctionList");//找到列表框    
             listBox.Items.Clear();//清空所有项
+
+            //若点击的项是Home
             if((sender as RadioButton).Name=="Home")
             {
                 listBox.Visibility = Visibility.Hidden;
+                CheckedItemName = "Home";
+
+                //找到功能演示面板
+                var canvas = (Canvas)this.GetTemplateChild("FuncShowCanvas");   
+
+                //将宽高重设回默认宽高
+                canvas.Width = 500;
+                canvas.Height = 500;
+
+                //清空所有容器Canvas的对象。
+                canvas.Children.Clear();
+
+                ///加载启动文档，设置好文档的宽高，最后添加到容器Canvas中
+                canvasContent = new Pages.CanvasContentsMFrmLoad();
+                canvasContent.Width = canvas.Width;
+                canvasContent.Height = canvas.Height;
+                canvas.Children.Add(canvasContent);
 
                 return;
             }
 
+            //加载XML文档
             XmlDocument doc = new XmlDocument();
             doc.Load("Data/FuncListItem.xml");
 
+            //获得此文档Root节点的所有子节点
             var root = doc.SelectSingleNode("Root");
             var childs = root.ChildNodes;
 
             var funcName = (sender as RadioButton).Name;//获得点击的功能按钮值
+
+            //判断点击的是哪个功能项
             switch (funcName)
             {
                 #region Case:Circle
@@ -207,7 +252,6 @@ namespace GraphElementGenerationSYS
             }
         }
 
-        public static string CheckedItemName="";//指示点击过的项的名称
         /// <summary>
         /// 功能列表项的点击回应事件
         /// </summary>
@@ -223,16 +267,20 @@ namespace GraphElementGenerationSYS
             }
             CheckedItemName=itemName;//记录上次点击的项的名字
 
-            if (canvas.Children.Count == 0)//判断，如果容器Canvas上没有子Canvas，则重绘子Canvas
+            if (CheckedItemName!="Setting0")//先判断点击的项应不是无需绘制坐标系的项
             {
-                canvas.Children.Add(CSys.canvas);
-                CSys.CreateCoordinateSys();
-                CSys.ClearCSys();
-                CSys.ShowGrid(50);
+                if (canvas.Children.Count == 0)//再判断，如果容器Canvas上没有子Canvas，则重绘子Canvas
+                {
+                    canvas.Children.Add(CSys.canvas);
+                    CSys.CreateCoordinateSys();
+                    CSys.ClearCSys();
+                    CSys.ShowGrid(50);
+                }
             }
 
             #endregion
 
+            //判断点击的是哪个ListItem
             switch (itemName)
             {
                 #region 圆与椭圆
@@ -671,11 +719,25 @@ namespace GraphElementGenerationSYS
 
                 #endregion
 
+                #region 变换
                 case "Transform0":
-                    CSys.ClearDotLocInfor();
-                    TransformAlgo.Translation();
+                    CSys.RefreshCordinateSys();
+                    TransformAlgo.SetTranslationStartState(15,10);                    
                     CSys.DrawDots();
 
+                    break;
+
+                case "Transform1":
+                    CSys.RefreshCordinateSys();
+                    TransformAlgo.SetRotationStartState(30);
+                    CSys.DrawDots();
+
+                    break;
+
+                #endregion
+
+                case"Setting0":
+                    MessageBox.Show("hi");
                     break;
 
                 default:
@@ -708,7 +770,10 @@ namespace GraphElementGenerationSYS
                     CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
                     CSys.Height = canvas.Height;
                     CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    CSys.ShowGrid(50);
+                    if (CheckedItemName != "Home")//若点击的是Home，则不绘网格
+                    {
+                        CSys.ShowGrid(50);
+                    }
                     CSys.DrawDots();
                 }
             }
@@ -722,12 +787,15 @@ namespace GraphElementGenerationSYS
                 canvas.Width = canvas.Width * (1 - ScaleSpeed);//改变容器Canvas的宽高
                 canvas.Height = canvas.Height * (1 - ScaleSpeed);
 
-                if (canvas.Children.Count!=0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
+                if (canvas.Children.Count != 0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
                 {
                     CSys.Width = canvas.Width;//设置子Canvas的宽高与容器Canvas的宽高一致
                     CSys.Height = canvas.Height;
                     CSys.ClearCSys();//清除子Canvas的子元素并重绘网格
-                    CSys.ShowGrid(50);
+                    if (CheckedItemName != "Home")//若点击的是Home，则不绘网格
+                    {
+                        CSys.ShowGrid(50);
+                    }
                     CSys.DrawDots();
                 }
             }
@@ -741,20 +809,38 @@ namespace GraphElementGenerationSYS
         /// <summary>
         /// 显示代码窗体按钮点击事件
         /// </summary>
-        private void CodeButton_Checked(object sender, RoutedEventArgs e)
+        private void CodeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CodeFormButtonClicked)//点击过的话就不执行后面的窗体show操作
+            //点击过或者点击了没有文档说明的项就不执行后面的窗体show操作
+            if (CodeFormButtonClicked||CheckedItemName=="Setting0")
             {
                 return;
             }
 
             CodeForm codeForm = new CodeForm();
-            DoubleAnimation daV = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(0.4)));//设置动画-淡入效果
-            codeForm.BeginAnimation(OpacityProperty, daV);
+            DoubleAnimation animation = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(0.4)));//设置动画-淡入效果
+            codeForm.BeginAnimation(OpacityProperty, animation);
             codeForm.Show();//显示窗体
 
             CodeFormButtonClicked = true;//表明此按钮已经点击过
 
         }
+
+        /// <summary>
+        /// 运行按钮点击事件。此按钮只有在可动态演示的项点击后才有演示效果
+        /// </summary>
+        private void RunButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckedItemName=="Transform0")
+            {
+                TransformAlgo.BeginTranslation();
+            }
+
+            if (CheckedItemName == "Transform1")
+            {
+                TransformAlgo.BeginRotate(45);
+            }
+        }
+
     }
 }

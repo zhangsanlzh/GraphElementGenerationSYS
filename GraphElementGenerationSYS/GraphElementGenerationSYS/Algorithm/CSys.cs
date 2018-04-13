@@ -5,6 +5,11 @@ using System.Windows.Shapes;
 
 namespace GraphElementGenerationSYS.Algorithm
 {
+    enum MyColor
+    {
+
+    }
+
     class CSys
     {
         public static Canvas canvas = new Canvas();//待返回的Canvas对象
@@ -55,13 +60,13 @@ namespace GraphElementGenerationSYS.Algorithm
         }
 
         /// <summary>
-        /// 使演示面板回到启动时状态
+        /// 刷新坐标系
         /// </summary>
-        public static void CanvasToDefault()
+        public static void RefreshCordinateSys()
         {
-            canvas.Background = new SolidColorBrush(Color.FromRgb(67, 67, 70));
-            ClearCSys();
-            ClearDotLocInfor();
+            CSys.ClearCSys();//清除子Canvas的子元素
+            CSys.ShowGrid(50);//重绘网格
+            CSys.ClearDotLocInfor();//清除点信息
         }
 
         /// <summary>
@@ -192,6 +197,11 @@ namespace GraphElementGenerationSYS.Algorithm
         }
 
         #region CSys内部引用
+        /// <summary>
+        /// 画一条线。此方法用于网格的绘制
+        /// </summary>
+        /// <param name="startPt">线的起点</param>
+        /// <param name="endPt">线的终点</param>
         private static void DrawLine(Point startPt, Point endPt)//画一条线
         {
             //设置线型为虚线
@@ -212,6 +222,9 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
+        /// <summary>
+        /// 画一个矩形。此方法用于填充网格的交叉线围成的矩形
+        /// </summary>
         private static void DrawRectangle(Point rectLoc)//画矩形
         {
             DoubleCollection dCollection = new DoubleCollection();//设置线型为虚线
@@ -231,10 +244,7 @@ namespace GraphElementGenerationSYS.Algorithm
             myPath.StrokeThickness = 1;//边线宽为1
             myPath.Data = myRectangleGeometry;
             myPath.StrokeDashArray = dCollection;
-            //if (isFill)
-            //{
-                myPath.Fill = Brushes.Orange;//填充为黑色
-            //}
+            myPath.Fill = Brushes.Orange;//填充为Orange色
 
             canvas.Children.Add(myPath);//把图像添加到待返回的临时canvas对象上
         }

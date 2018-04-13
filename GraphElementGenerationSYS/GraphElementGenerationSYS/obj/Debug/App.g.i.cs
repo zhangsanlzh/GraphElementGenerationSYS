@@ -74,6 +74,8 @@ namespace GraphElementGenerationSYS {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
+            SplashScreen splashScreen = new SplashScreen("startupscreen.png");
+            splashScreen.Show(true);
             GraphElementGenerationSYS.App app = new GraphElementGenerationSYS.App();
             app.InitializeComponent();
             app.Run();

@@ -84,7 +84,6 @@ C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerat
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle2.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle3.g.cs
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle3.baml
-C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle4.g.cs
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle4.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Circle5.g.cs
@@ -109,3 +108,10 @@ C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerat
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Polygon2.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Character.g.cs
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Character.baml
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Transform0.g.cs
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Transform0.baml
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Transform1.g.cs
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Transform1.baml
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentsMFrmLoad.g.cs
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentsMFrmLoad.baml
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.csprojResolveAssemblyReference.cache

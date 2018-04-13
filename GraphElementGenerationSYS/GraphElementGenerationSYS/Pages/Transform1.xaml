@@ -1,0 +1,74 @@
+﻿<Page x:Class="GraphElementGenerationSYS.Pages.Transform1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GraphElementGenerationSYS.Pages"
+      Height="480" Width="670"
+      Title="Transform1">
+
+    <FlowDocumentScrollViewer>
+        <FlowDocument>
+            <FlowDocument.Style>
+                <Style TargetType="{x:Type FlowDocument}">
+                    <Setter Property="LineHeight" Value="2"/>
+                    <Setter Property="PageWidth" Value="670"/>
+                    <Setter Property="PagePadding" Value="0 20 10 50"/>
+                </Style>
+            </FlowDocument.Style>
+
+            <Section Margin="10 10 10 50">
+                <Paragraph TextAlignment="Center" FontSize="20">旋转变换</Paragraph>
+
+                <Paragraph Margin="10">
+                    为使旋转的原理更加直观，本例假定待旋转的是条自原点出发的长度自定义的直线。
+                    演示时，此条曲线将按设定的角度顺时针旋转。实现此例旋转效果
+                    的算法如下所示：
+                </Paragraph>
+
+                <Paragraph Margin="10">
+                    <Bold>一、算法（C#描述）</Bold>
+                </Paragraph>
+
+                <Paragraph>
+                    <Figure>
+                        <BlockUIContainer>
+                            <Image Source="images\transform1\2018-04-13_145942.png"/>
+                        </BlockUIContainer>
+                    </Figure>
+                </Paragraph>
+
+                <Paragraph TextAlignment="Center">旋转算法</Paragraph>
+
+                <Paragraph Margin="10 20 10 10">
+                    <Bold>二、特别说明</Bold>
+                </Paragraph>
+
+                <List MarkerStyle="Decimal">
+                    <ListItem>
+                        <Paragraph Margin="10">
+                            算法中的
+                            <Bold>StraitLineAlgo.DrawStraitLineDDA(new pointLoc(Sx,Sy ), new pointLoc(Ex, Ey));</Bold>
+                            为自定义的方法。该方法根据传入的值在演示区
+                    画一条直线。起点的坐标是(Sx,Sy)，终点坐标是(Ex,Ey)。具体见源码
+                            <Bold>Algorithm</Bold> 模块。
+                        </Paragraph>
+                    </ListItem>
+
+                    <ListItem>
+                        <Paragraph Margin="10">
+                            实际上，本例的演示代码远远不能描述实际的旋转情况。本例计算旋转后的点的坐标的方法太过简单。
+                            而且，如果定义的角度的sin值 或 cos值小于0.5，那么计算得到的终点的坐标为（0，0）
+                            本例能正常演示的角度为45°，90°。
+                        </Paragraph>
+                    </ListItem>
+                </List>
+
+
+            </Section>
+        </FlowDocument>
+    </FlowDocumentScrollViewer>
+
+
+
+</Page>

@@ -80,8 +80,6 @@
     <Item>旋转算法</Item>
   </FuncList>
   <FuncList type="Setting">
-    <Item>线宽设置</Item>
-    <Item>线型设置</Item>
-    <Item>线颜色设置</Item>
+    <Item>填充点颜色</Item>
   </FuncList>
 </Root>
