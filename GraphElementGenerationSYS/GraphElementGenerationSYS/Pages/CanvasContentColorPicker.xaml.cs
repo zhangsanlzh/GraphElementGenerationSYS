@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace GraphElementGenerationSYS.Pages
@@ -159,6 +147,51 @@ namespace GraphElementGenerationSYS.Pages
         private void RadioButton_Click(object sender, RoutedEventArgs e)
         {
             ColorUserDefintionTemp = (sender as RadioButton).Name;
+        }
+
+        /// <summary>
+        /// 加载此页面时判断当前选择的颜色，并选中对应的RadioButton项
+        /// </summary>
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            switch (ColorUserDefintion)
+            {
+                case "Orange":
+                    Orange.IsChecked = true;
+                    break;
+
+                case "Black":
+                    Black.IsChecked = true;
+                    break;
+
+                case "Red":
+                    Red.IsChecked = true;
+                    break;
+
+                case "Pink":
+                    Pink.IsChecked = true;
+                    break;
+
+                case "Green":
+                    Green.IsChecked = true;
+                    break;
+
+                case "Purple":
+                    Purple.IsChecked = true;
+                    break;
+
+                case "Gray":
+                    Gray.IsChecked = true;
+                    break;
+
+                case "Blue":
+                    Blue.IsChecked = true;
+                    break;
+
+                default:
+                    break;
+
+            }
         }
     }
 }

@@ -1,4 +1,3 @@
-C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\bin\Debug\images\GegSys.ico
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\bin\Debug\Data\FuncListItem.xml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\bin\Debug\images\Aa.bmp
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\bin\Debug\images\Bb.bmp
@@ -116,4 +115,3 @@ C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerat
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentsMFrmLoad.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentColorPicker.g.cs
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentColorPicker.baml
-C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.csprojResolveAssemblyReference.cache

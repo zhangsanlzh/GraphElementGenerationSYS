@@ -1,15 +1,11 @@
 ﻿using GraphElementGenerationSYS.Algorithm;
+using GraphElementGenerationSYS.Forms;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Xml;
-using GraphElementGenerationSYS.Forms;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace GraphElementGenerationSYS
 {
@@ -736,11 +732,22 @@ namespace GraphElementGenerationSYS
 
                 #endregion
 
-                case"Setting0":
+                #region 设置
+                case "Setting0":
+                    //将宽高重设回默认宽高
+                    canvas.Width = 500;
+                    canvas.Height = 500;
+
+                    //清空所有容器Canvas的对象。
+                    canvas.Children.Clear();
+
+                    //填充页面
                     Pages.CanvasContentColorPicker canvasContentColorPicker = new Pages.CanvasContentColorPicker();
+                    canvasContent.Width = canvas.Width;
+                    canvasContent.Height = canvas.Height;
                     canvas.Children.Add(canvasContentColorPicker);
-                    canvas.Background = Brushes.Gray;
                     break;
+                #endregion
 
                 default:
                     break;
