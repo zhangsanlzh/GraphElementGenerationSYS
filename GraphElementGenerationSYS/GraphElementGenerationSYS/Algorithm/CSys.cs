@@ -1,15 +1,11 @@
-﻿using System.Windows;
+﻿using GraphElementGenerationSYS.Pages;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace GraphElementGenerationSYS.Algorithm
 {
-    enum MyColor
-    {
-
-    }
-
     class CSys
     {
         public static Canvas canvas = new Canvas();//待返回的Canvas对象
@@ -244,7 +240,45 @@ namespace GraphElementGenerationSYS.Algorithm
             myPath.StrokeThickness = 1;//边线宽为1
             myPath.Data = myRectangleGeometry;
             myPath.StrokeDashArray = dCollection;
-            myPath.Fill = Brushes.Orange;//填充为Orange色
+
+            //根据设定的颜色确定填充点的颜色
+            switch(CanvasContentColorPicker.ColorUserDefintion)
+            {
+                case "Orange":
+                    myPath.Fill = Brushes.Orange;//填充为Orange色
+                    break;
+
+                case "Black":
+                    myPath.Fill = Brushes.Black;//填充为Black色
+                    break;
+
+                case "Red":
+                    myPath.Fill = Brushes.Red;//填充为Red色
+                    break;
+
+                case "Pink":
+                    myPath.Fill = Brushes.Pink;//填充为Pink色
+                    break;
+
+                case "Green":
+                    myPath.Fill = Brushes.Green;//填充为Green色
+                    break;
+
+                case "Purple":
+                    myPath.Fill = Brushes.Purple;//填充为Purple色
+                    break;
+
+                case "Gray":
+                    myPath.Fill = Brushes.Gray;//填充为Gray色
+                    break;
+
+                case "Blue":
+                    myPath.Fill = Brushes.Blue;//填充为Blue色
+                    break;
+
+                default:
+                    break;
+            }
 
             canvas.Children.Add(myPath);//把图像添加到待返回的临时canvas对象上
         }

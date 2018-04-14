@@ -84,6 +84,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Algorithm\TransformAlgo.cs" />
+    <Compile Include="Pages\CanvasContentColorPicker.xaml.cs">
+      <DependentUpon>CanvasContentColorPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CanvasContentsMFrmLoad.xaml.cs">
       <DependentUpon>CanvasContentsMFrmLoad.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CanvasContentColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CanvasContentsMFrmLoad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -594,6 +601,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\qrcode_1523618340690.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\574e605e1f541.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@
     <Style x:Key="FuncShowCanvasStyle" TargetType="{x:Type Canvas}">
         <Setter Property="Width" Value="500"/>
         <Setter Property="Height" Value="500"/>
-        <Setter Property="Background" Value="#434346"/>
+        <Setter Property="Background" Value="Gray"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="24" Color="Beige" ShadowDepth="3"/>

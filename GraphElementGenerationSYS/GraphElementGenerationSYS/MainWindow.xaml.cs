@@ -737,7 +737,9 @@ namespace GraphElementGenerationSYS
                 #endregion
 
                 case"Setting0":
-                    MessageBox.Show("hi");
+                    Pages.CanvasContentColorPicker canvasContentColorPicker = new Pages.CanvasContentColorPicker();
+                    canvas.Children.Add(canvasContentColorPicker);
+                    canvas.Background = Brushes.Gray;
                     break;
 
                 default:
@@ -762,8 +764,11 @@ namespace GraphElementGenerationSYS
                     return;
                 }
 
-                canvas.Width = canvas.Width * (1+ScaleSpeed);//改变容器Canvas的宽高
-                canvas.Height = canvas.Height *(1 + ScaleSpeed);
+                if (CheckedItemName!="Setting0")
+                {
+                    canvas.Width = canvas.Width * (1+ScaleSpeed);//改变容器Canvas的宽高
+                    canvas.Height = canvas.Height *(1 + ScaleSpeed);
+                }
 
                 if (canvas.Children.Count != 0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
                 {
@@ -784,8 +789,11 @@ namespace GraphElementGenerationSYS
                     return;
                 }
 
-                canvas.Width = canvas.Width * (1 - ScaleSpeed);//改变容器Canvas的宽高
-                canvas.Height = canvas.Height * (1 - ScaleSpeed);
+                if (CheckedItemName != "Setting0")
+                {
+                    canvas.Width = canvas.Width * (1 - ScaleSpeed);//改变容器Canvas的宽高
+                    canvas.Height = canvas.Height * (1 - ScaleSpeed);
+                }
 
                 if (canvas.Children.Count != 0)//判断初始时是否有子Canvas，没有则不设定子Canvas宽高
                 {

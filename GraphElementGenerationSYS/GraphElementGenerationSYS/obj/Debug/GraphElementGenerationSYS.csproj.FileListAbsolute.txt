@@ -114,4 +114,6 @@ C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerat
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\Transform1.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentsMFrmLoad.g.cs
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentsMFrmLoad.baml
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentColorPicker.g.cs
+C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\Pages\CanvasContentColorPicker.baml
 C:\Users\Administrator\Desktop\GraphElementGenerationSYS-ING\GraphElementGenerationSYS\GraphElementGenerationSYS\obj\Debug\GraphElementGenerationSYS.csprojResolveAssemblyReference.cache
