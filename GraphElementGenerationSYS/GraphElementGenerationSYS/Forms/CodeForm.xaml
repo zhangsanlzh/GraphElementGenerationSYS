@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"              
-        Title="CodeForm" Height="480" Width="670"
+        Title="查看文档" Height="480" Width="670"
         Style="{DynamicResource CodeFormStyle}" 
         Loaded="CodeForm_Loaded">
 

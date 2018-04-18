@@ -550,13 +550,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_888B361D3D90AF8388EF6EAF7725CB10"
+        "OwnerKey" = "8:_8D828493A76843A4BBA202B2A179C244"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8D828493A76843A4BBA202B2A179C244"
+        "OwnerKey" = "8:_888B361D3D90AF8388EF6EAF7725CB10"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -577,6 +577,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -593,6 +601,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -2814,7 +2830,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_59EBA88FB4484A1DA3E5111B2F7DB197"
             {
-            "Name" = "8:图元算法演示系统"
+            "Name" = "8:基本图元生成系统"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -2828,7 +2844,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B82D6D49982742FAB381FCF0D73A6645"
             {
-            "Name" = "8:图元算法演示系统"
+            "Name" = "8:基本图元生成系统"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

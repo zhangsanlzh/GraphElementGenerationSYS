@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"              
-        Title="MainWindow" Height="620" Width="900"
+        Title="基本图元生成系统" Height="620" Width="900"
         Style="{DynamicResource MainWindowStyle}"
         Loaded="MainWindow_Loaded">
 
