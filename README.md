@@ -6,7 +6,7 @@ I am so sorry that the name is not correct actually. But I don't want to modify 
 
 Well , the system's name is  ***Geometric Primitives  Generation Algorithm Presentation System***. It can execute some basic and simple algorithms showing us what the algorithm principles that *2D Geometric Primitives* generated on our screen are. It looks like this,
 
-![README](C:\Users\Administrator\Desktop\README.gif)
+![README](README.gif)
 
 
 
