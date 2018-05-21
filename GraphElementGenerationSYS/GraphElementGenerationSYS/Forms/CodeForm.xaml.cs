@@ -30,8 +30,8 @@ namespace GraphElementGenerationSYS.Forms
         /// </summary>
         protected void FormClose(object sender, RoutedEventArgs e)
         {
-            Close();
-            MainWindow.CodeFormButtonClicked = false;//表明此窗体已关闭，可以继续点击 MainForm 右侧的显示代码窗口按钮
+            Close();            
+            MainWindow.IsDocFormShow = false;//表明此窗体已关闭，可以继续点击 MainForm 右侧的显示代码窗口按钮
         }
 
         /// <summary>
@@ -220,8 +220,8 @@ namespace GraphElementGenerationSYS.Forms
                 #endregion
 
                 default:
-                    Pages.DefaultPage defaultPage = new Pages.DefaultPage();
-                    (this.GetTemplateChild("CodeFrame") as Frame).Content = defaultPage;
+                    //Pages.DefaultPage defaultPage = new Pages.DefaultPage();
+                    //(this.GetTemplateChild("CodeFrame") as Frame).Content = defaultPage;
                     break;
             }
             

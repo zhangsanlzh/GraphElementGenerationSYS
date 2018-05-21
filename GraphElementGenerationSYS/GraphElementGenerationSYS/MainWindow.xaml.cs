@@ -51,7 +51,8 @@ namespace GraphElementGenerationSYS
         /// </summary>
         protected void FormClose(object sender, RoutedEventArgs e)
         {
-            Close();
+            //Close();
+            Environment.Exit(0);//结束当前进程
         }
 
         /// <summary>
@@ -361,7 +362,7 @@ namespace GraphElementGenerationSYS
                 #region 中点画线法
                 case "StraitLine1"://中点画线法
                     CSys.ClearDotLocInfor();
-                    StraitLineAlgo.CenterStraitLine();
+                    StraitLineAlgo.TwoStepsDrawStraitLine();
                     CSys.DrawDots();
                     break;
                 #endregion
@@ -817,17 +818,17 @@ namespace GraphElementGenerationSYS
         }
 
         /// <summary>
-        /// 该值指示显示代码窗口按钮是否点击过了。默认false，没点击过。
+        /// 是否显示文档窗体。默认为false，不显示。
         /// </summary>
-        public static bool CodeFormButtonClicked=false;
+        public static bool IsDocFormShow=false;
 
         /// <summary>
-        /// 显示代码窗体按钮点击事件
+        /// 查看文档窗体按钮点击事件
         /// </summary>
         private void CodeButton_Click(object sender, RoutedEventArgs e)
         {
-            //点击过或者点击了没有文档说明的项就不执行后面的窗体show操作
-            if (CodeFormButtonClicked||CheckedItemName=="Setting0")
+            //显示了查看文档窗体，或是点击了设置项就不执行后面操作。
+            if (IsDocFormShow || CheckedItemName=="Setting0")
             {
                 return;
             }
@@ -835,9 +836,13 @@ namespace GraphElementGenerationSYS
             CodeForm codeForm = new CodeForm();
             DoubleAnimation animation = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(0.4)));//设置动画-淡入效果
             codeForm.BeginAnimation(OpacityProperty, animation);
-            codeForm.Show();//显示窗体
 
-            CodeFormButtonClicked = true;//表明此按钮已经点击过
+            //不是点击了Home，或者没有点击任何项就不显示文档窗体。
+            if (CheckedItemName != "Home" && CheckedItemName != "")
+            {
+                codeForm.Show();//显示窗体
+                IsDocFormShow = true;//表明可以显示文档窗体
+            }
 
         }
 

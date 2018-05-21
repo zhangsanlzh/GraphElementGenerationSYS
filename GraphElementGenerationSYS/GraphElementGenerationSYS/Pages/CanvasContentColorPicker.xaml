@@ -7,8 +7,11 @@
 
     <StackPanel Orientation="Horizontal" Width="500" Height="500">
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel Background="#B7D8E3" Height="500" Width="140" HorizontalAlignment="Left" x:Name="ColorPickerPanel">
-
+            <StackPanel Height="500" Width="140" HorizontalAlignment="Left" x:Name="ColorPickerPanel">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="..\images\bg.png"/>
+                </StackPanel.Background>
+                
                 <StackPanel Orientation="Horizontal">
                     <Label Background="#3F3F46" />
                     <Label x:Name="OrangeLabel" Background="Orange" />

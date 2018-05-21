@@ -14,7 +14,7 @@
   </FuncList>
   <FuncList type="StraitLine">
     <Item>DDA画线法</Item>
-    <Item>中点画线法</Item>
+    <Item>双步画线法</Item>
     <Item>Bresenham画线法</Item>
   </FuncList>
   <FuncList type="Polygon">

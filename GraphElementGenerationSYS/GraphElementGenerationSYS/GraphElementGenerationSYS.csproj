@@ -553,12 +553,6 @@
     <Resource Include="Pages\images\straitLine0\20160803094540729.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pages\images\straitLine1\20161230185308448.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Pages\images\straitLine1\CenterStraitLine.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pages\images\straitLine2\BresenhamStraitLine.png" />
   </ItemGroup>
   <ItemGroup>
@@ -602,6 +596,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pages\images\straitLine1\TwoStepsDrawStraitLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\banner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

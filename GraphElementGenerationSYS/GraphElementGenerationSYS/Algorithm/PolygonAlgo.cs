@@ -24,8 +24,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void RegularTriangle()
         {
-            //RegularTriangleFixedTopPoint(6, 4, 0);
-            RegularTriangleFixedBottomEdge(6, 1, 5);
+            RegularTriangleFixedTopPoint(25, 25, 10);
         }
 
         /// <summary>
@@ -33,7 +32,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void CreateSquare()
         {
-            CreateSquare(5, 1, 1);
+            CreateSquare(25, 15, 10);
         }
 
         /// <summary>
@@ -41,15 +40,14 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void CreateGenericPolygon()
         {
-            pointLoc [] points = new pointLoc[5];//声明五个点
+            pointLoc [] points = new pointLoc[4];//声明若干个点
 
-            points[0]=new pointLoc(1,1);//为点赋值
-            points[1]=new pointLoc(1,3);
-            points[2]=new pointLoc(3,5);
-            points[3]=new pointLoc(5,3);
-            points[4]=new pointLoc(5,1);
+            points[0]=new pointLoc(15,10);//为点赋值
+            points[1]=new pointLoc(35,10);
+            points[2]=new pointLoc(15,35);
+            points[3]=new pointLoc(35,35);
 
-            CreateGenericPolygon(points);//创建五个定点的示例多边形
+            CreateGenericPolygon(points);//创建示例多边形
         }
 
         #region 内部方法
@@ -112,15 +110,22 @@ namespace GraphElementGenerationSYS.Algorithm
         /// 画任意个定点的多边形
         /// </summary>
         /// <param name="pointLoc">存储了多个定点信息的pointLoc型数组</param>
-        private static void CreateGenericPolygon(pointLoc[] pointLocArr) 
+        public static void CreateGenericPolygon(pointLoc[] pointLocArr) 
         {
             int polyNum = pointLocArr.Length;//顶点数
 
-            StraitLineAlgo.DrawStraitLineDDA(pointLocArr[0], pointLocArr[1]);
-            StraitLineAlgo.DrawStraitLineDDA(pointLocArr[1], pointLocArr[2]);
-            StraitLineAlgo.DrawStraitLineDDA(pointLocArr[2], pointLocArr[3]);
-            StraitLineAlgo.DrawStraitLineDDA(pointLocArr[3], pointLocArr[4]);
-            StraitLineAlgo.DrawStraitLineDDA(pointLocArr[4], pointLocArr[0]);
+            //连接各个点
+            for (int i = 0; i < pointLocArr.Length; i++)
+            {
+                if (i + 1 < pointLocArr.Length)
+                {
+                    StraitLineAlgo.DrawStraitLineDDA(pointLocArr[i], pointLocArr[i + 1]);
+                }
+                else
+                {
+                    StraitLineAlgo.DrawStraitLineDDA(pointLocArr[i], pointLocArr[0]);//闭合首尾
+                }
+            }
         }
 
         #endregion

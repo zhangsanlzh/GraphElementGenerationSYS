@@ -6,11 +6,20 @@ using System.Windows.Shapes;
 
 namespace GraphElementGenerationSYS.Algorithm
 {
+    /// <summary>
+    /// 坐标系类。包含一系列操作坐标系相关的属性与方法。
+    /// </summary>
     class CSys
     {
-        public static Canvas canvas = new Canvas();//待返回的Canvas对象
+        /// <summary>
+        /// 待返回的画布对象
+        /// </summary>
+        public static Canvas canvas = new Canvas();
 
-        public static double Width//Canvas的宽
+        /// <summary>
+        /// 画布的宽
+        /// </summary>
+        public static double Width
         {
             set
             {
@@ -24,7 +33,10 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
-        public static double Height//Canvas的高
+        /// <summary>
+        /// 画布的高
+        /// </summary>
+        public static double Height
         {
             set
             {
@@ -38,9 +50,16 @@ namespace GraphElementGenerationSYS.Algorithm
 
         }
 
-        public static int CellNum { get; set; }//单元格个数
+        /// <summary>
+        /// 坐标系中单元格的个数
+        /// </summary>
+        public static int CellNum { get; set; }
 
-        private static int[,] CanvasDotsArray=new int[50,50];//用于保存单元格点的数组，1代表某格有点
+        /// <summary>
+        /// 用于保存单元格点的数组。大小为50×50。
+        /// 数组任一元素值为1代表某格有点,0表示没有。
+        /// </summary>
+        public static int[,] CanvasDotsArray=new int[50,50];
 
         /// <summary>
         /// 创建坐标系
@@ -157,8 +176,9 @@ namespace GraphElementGenerationSYS.Algorithm
         }
 
         /// <summary>
-        /// 在Canvas上保存点
+        /// 调用此方法以表明画布上某处有点。
         /// </summary>
+        /// <param name="location">点的坐标。</param>
         public static void SetDotLocInfor(Point location)
         {
             if (location.Y<0||location.X<0||location.Y>CellNum-1||location.X>CellNum-1)

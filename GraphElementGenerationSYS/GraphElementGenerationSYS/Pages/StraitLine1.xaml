@@ -15,7 +15,7 @@
             </FlowDocument.Style>
 
             <Section Margin="10 10 10 50">
-                <Paragraph TextAlignment="Center" FontSize="20">中点画线法</Paragraph>
+                <Paragraph TextAlignment="Center" FontSize="20">双步画线法</Paragraph>
                 <Paragraph Margin="10">
                     <Bold>一、算法（C#描述）</Bold>
                 </Paragraph>
@@ -23,78 +23,12 @@
                 <Paragraph>
                     <Figure>
                         <BlockUIContainer>
-                            <Image Source="images\straitLine1\CenterStraitLine.png"/>
+                            <Image Source="images\straitLine1\TwoStepsDrawStraitLine.png"/>
                         </BlockUIContainer>
                     </Figure>
                 </Paragraph>
 
-                <Paragraph TextAlignment="Center">图（1）中点画线法</Paragraph>
-
-                <Paragraph Margin="10 20 10 10">
-                    <Bold>二、算法原理</Bold>
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    假定直线斜率0&lt;k&lt;1，并且直线上当前已确定一个像素点为P(xp, yp)，则下一个与理想直线最接近的像素点只能是P点正右方的点P1或右上方的点P2两者之一。设M为线段P1P2的中点，Q为理想直线与线段P1P2的交点。现需要确定下一个像素点。
-                </Paragraph>
-
-                <Paragraph>
-                    <Figure>
-                        <BlockUIContainer>
-                            <Image Source="images\straitLine1\20161230185308448.png" Width="470"/>
-                        </BlockUIContainer>
-                    </Figure>
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    若M在Q上方，则P1离直线更近，应取P1为下一个像素；
-                    若M在Q下方，则P2离直线更近，应取P2为下一个像素；
-                    若M与Q重合，则P1或P2任取一点。
-                    这种以中点M作为判别标志的方法即为中点画线法。
-                </Paragraph>
-
-                <Paragraph Margin="10 20 10 10">
-                    <Bold>三、特别说明</Bold>
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    算法中的
-                    <Bold>SetPointsLocInfor(Cx, Cy, x, y)</Bold> 为自定义的方法。该方法根据传入的值设置演示区
-                    要显示的点的位置。具体见源码
-                    <Bold>Algorithm</Bold> 模块。
-                </Paragraph>
-
-                <Paragraph Margin="10 20 10 10">
-                    <Bold>四、算法说明</Bold>
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    在屏幕上绘线，要考虑线的方向。虽然数学上直线没有方向，但算法实现仍要考虑方向。否则就不能任意输入两个点
-                    而绘制出需要的直线。
-                </Paragraph>
-
-                <Paragraph Margin="10 20 10 10">
-                    <Bold>五、特别感谢</Bold>
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    本文第二节算法原理部分摘自CSDN博客。
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    博主:革命队伍的螺丝钉
-                </Paragraph>
-
-                <Paragraph Margin="10">
-                    博文地址：
-                    <Hyperlink Click="Hyperlink_Click">
-                        https://blog.csdn.net/zl908760230/article/details/53945673
-                    </Hyperlink>
-                </Paragraph>
-
-                <Paragraph Margin="10 20 10 10" Foreground="Red" FontSize="15">
-                    感谢作者原创！
-                </Paragraph>
+                <Paragraph TextAlignment="Center">图（1）双步画线法</Paragraph>
 
             </Section>
         </FlowDocument>

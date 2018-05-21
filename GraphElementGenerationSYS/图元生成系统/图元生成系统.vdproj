@@ -45,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_11BC53DB3C5C478C8D5AF1179369A35B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_188727FC2674405CABD84ED43637A693"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -165,12 +171,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_496EDABC0D614E5FB9525C573FEA7FCA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -178,12 +178,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4A66C833944D420285E7EB8EDF0478F5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4B95ED6D794F4ECFA7BC5DC9DD7D9F12"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -351,6 +345,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_99F3BE72140F4B399389BA8FFB2F9B3D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -501,12 +501,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_ED9968CEA25746FFA57EF9F83EE206A7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EF8A324E753A450FA6FA894ACE11C545"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -538,6 +532,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F981744C4CDD4FA48D73792DC03F3C74"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FF1C9E40F201428CBA3AD97E71F15394"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -584,6 +584,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -608,6 +616,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -722,6 +738,26 @@
             {
             "SourcePath" = "8:..\\GraphElementGenerationSYS\\images\\icon.ico"
             "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11BC53DB3C5C478C8D5AF1179369A35B"
+            {
+            "SourcePath" = "8:..\\GraphElementGenerationSYS\\images\\bg.png"
+            "TargetName" = "8:bg.png"
             "Tag" = "8:"
             "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
             "Condition" = "8:"
@@ -1138,26 +1174,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45E3DE3F8FFF40A085D2AC1BAB49E046"
-            {
-            "SourcePath" = "8:..\\..\\..\\GoodUIDesign\\UI Design\\banner.jpg"
-            "TargetName" = "8:banner.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_496EDABC0D614E5FB9525C573FEA7FCA"
             {
             "SourcePath" = "8:..\\GraphElementGenerationSYS\\Pages\\images\\circle4\\1335281653_6831.png"
@@ -1184,26 +1200,6 @@
             "TargetName" = "8:Vv.bmp"
             "Tag" = "8:"
             "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B95ED6D794F4ECFA7BC5DC9DD7D9F12"
-            {
-            "SourcePath" = "8:..\\GraphElementGenerationSYS\\Pages\\images\\straitLine1\\CenterStraitLine.png"
-            "TargetName" = "8:CenterStraitLine.png"
-            "Tag" = "8:"
-            "Folder" = "8:_5257C7D1732F430BA6A347B5EAAAF988"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1749,6 +1745,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
+            {
+            "SourcePath" = "8:..\\GraphElementGenerationSYS\\images\\banner.jpg"
+            "TargetName" = "8:banner.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_99F3BE72140F4B399389BA8FFB2F9B3D"
             {
             "SourcePath" = "8:..\\GraphElementGenerationSYS\\images\\Yy.bmp"
@@ -2249,26 +2265,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED9968CEA25746FFA57EF9F83EE206A7"
-            {
-            "SourcePath" = "8:..\\GraphElementGenerationSYS\\Pages\\images\\straitLine1\\20161230185308448.png"
-            "TargetName" = "8:20161230185308448.png"
-            "Tag" = "8:"
-            "Folder" = "8:_5257C7D1732F430BA6A347B5EAAAF988"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EF8A324E753A450FA6FA894ACE11C545"
             {
             "SourcePath" = "8:..\\GraphElementGenerationSYS\\Pages\\images\\circle1\\BresenhamAlgo.png"
@@ -2375,6 +2371,26 @@
             "TargetName" = "8:Tt.bmp"
             "Tag" = "8:"
             "Folder" = "8:_917B3FA40B1F4044902673ECA235B734"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FF1C9E40F201428CBA3AD97E71F15394"
+            {
+            "SourcePath" = "8:..\\GraphElementGenerationSYS\\Pages\\images\\straitLine1\\TwoStepsDrawStraitLine.png"
+            "TargetName" = "8:TwoStepsDrawStraitLine.png"
+            "Tag" = "8:"
+            "Folder" = "8:_5257C7D1732F430BA6A347B5EAAAF988"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2708,7 +2724,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:图元生成系统"
         "ProductCode" = "8:{0DB381B3-798B-41AD-B536-4A0E98878A36}"
-        "PackageCode" = "8:{803E89A0-5668-4346-8DD0-301AB9F56E64}"
+        "PackageCode" = "8:{8EF1E1BE-EFD0-40AC-A528-007F807FAF5B}"
         "UpgradeCode" = "8:{8F6216A8-8EA0-4E16-9631-2621022CC011}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -2884,7 +2900,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -2907,7 +2923,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -2956,7 +2972,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -2988,7 +3004,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -3020,7 +3036,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -3077,7 +3093,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -3122,7 +3138,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -3167,7 +3183,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -3190,7 +3206,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -3226,7 +3242,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_45E3DE3F8FFF40A085D2AC1BAB49E046"
+                            "Value" = "8:_97BEAFD06B7040F29BDD7DE9C8E59EB7"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"

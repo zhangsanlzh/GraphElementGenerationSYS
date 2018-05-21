@@ -11,7 +11,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void MidpointCircleAlgo()
         {
-            MidpointCircleAlgo(3, 4, 4);
+            MidpointCircleAlgo(20, 25, 25);
         }
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void BresenhamCircleAlgo()
         {
-            BresenhamCircleAlgo(3, 4, 4);
+            BresenhamCircleAlgo(20.5, 25, 25);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void PosiAndNegaCircleAlgo()
         {
-            PosiAndNegaCircleAlgo(3, 4, 4);
+            PosiAndNegaCircleAlgo(20, 25, 25);
 
         }
 
@@ -36,7 +36,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void QuickCircleAlgo()
         {
-            QuickCircleAlgo(3, 4, 4);
+            QuickCircleAlgo(20, 25, 25);
         }
 
         #region 画圆算法-不被显式调用
@@ -202,7 +202,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void MidpointEllipseAlgo()
         {
-            MidpointEllipseAlgo(4,4,4,2);
+            MidpointEllipseAlgo(25,25,20,15);
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace GraphElementGenerationSYS.Algorithm
         /// </summary>
         public static void BresenhamEllipseAlgo()
         {
-            BresenhamEllipseAlgo(4,4,4,2);
+            BresenhamEllipseAlgo(25, 25, 20.5, 15.5);
         }
 
         /// <summary>

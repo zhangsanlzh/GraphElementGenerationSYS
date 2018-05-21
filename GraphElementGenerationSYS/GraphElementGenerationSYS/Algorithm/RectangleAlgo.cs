@@ -6,12 +6,12 @@ namespace GraphElementGenerationSYS.Algorithm
     {
         public static void RectangleNoFillAlgo()
         {
-            RectangleNoFillAlgo(2, 2,5, 4);
+            RectangleNoFillAlgo(2, 2,25, 15);
         }
 
         public static void RectangleFillAlgo()
         {
-            RectangleFillAlgo(2, 2, 5, 4);
+            RectangleFillAlgo(2, 2, 25, 15);
         }
 
         /// <summary>
@@ -54,7 +54,5 @@ namespace GraphElementGenerationSYS.Algorithm
                 }
             }
         }
-
-
     }
 }
